@@ -1,0 +1,214 @@
+---
+format: 
+  revealjs:
+    theme: [serif, custom.scss]
+    scrollable: true
+    logo: media/chopr.png
+    footer: Arcus Education / Children's Hospital of Philadelphia (CHOP) R User Group
+    css: styles.css
+---
+
+-   Use keyboard arrow keys to
+    -   advance ( → ) and
+    -   go back ( ← )
+-   Type "s" to see speaker notes
+-   Type "?" to see other keyboard shortcuts
+
+```{r echo = FALSE}
+library(countdown)
+```
+
+## Tech Check {.smaller}
+
+-   We suggest using the Chrome web browser.
+-   **Important!!** If you haven't already, please sign up for a **free** account at <https://posit.cloud>. We will use this as our platform today. 
+-   (optional) These **slides** are at <https://example.com>
+-   (optional) The GitHub repo with **exercises and solutions** for this course is at <https://example.com>
+
+
+
+------------------------------------------------------------------------
+
+::: {.columns .v-center-container}
+::: {.column width="20%"}
+![](media/chopr_logo.png)
+:::
+
+::: {.column width="80%"}
+Introduction to R for Clinical Data
+
+Presented by Arcus Education and the Children's Hospital of Philadelphia (CHOP) R User Group
+:::
+:::
+
+::: notes
+\[Start at 0:02 past starting time.\]
+
+Hello and welcome to Introduction to R for Clinical Data, presented by the Children's Hospital of Philadelphia (CHOP) R User Group and Arcus Data Education. We're glad you're here!
+:::
+
+## Introducing your Presenters and TAs! {.smaller}
+
+Presenters and TAs: 
+
+- Names go here!  Pics and bios too if desired.
+
+::: notes
+
+We have several great Presenters and Teaching Assistants, including the folks whose names you see here. Our TA's will be helping learners out one on one, so if you're struggling, please reach out in chat and one of the TAs will help!
+
+The main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.
+
+We will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that's completely up to you. We won't record breakout sessions.
+
+:::
+
+------------------------------------------------------------------------
+
+![](media/main_zoom_window.png){.bordered fig-align="center"}
+
+Familiarize yourself with:
+
+-   Participants
+-   Chat
+
+::: notes
+This is the main Zoom window. On the bottom you should be able to see two buttons - Participants and Chat.
+
+Click on these buttons now to open the Participants and Chat windows, and place those windows somewhere you can see, if necessary by making your main Zoom window a little smaller.
+:::
+
+## Non-Verbal Feedback
+
+The "Yes, go ahead" feedback with the check mark is important today!
+
+![](media/feedback.png){.half .centered fig-align="center"}
+
+::: notes
+We will make heavy use of the Non-verbal Feedback functionality of Zoom. At various points, we presenters will ask you to click "Yes" to let us know we can keep going. What I mean by that is to click the green circle with the check mark in the Participants window. Go ahead and find that "Reactions" section of your Zoom screen now. We'll ask you to use it in just a few moments.
+:::
+
+## Chat Window
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+![](media/chat_window.png)
+:::
+
+::: {.column width="50%"}
+Chat is the way we ask for help here.
+:::
+:::
+
+::: notes
+The primary purpose of the Chat window, for this course, is to ask for help if you get stuck with a technical issue. If you don't have a problem that someone is helping you with, you do not need to monitor the chat window to follow the course. I will also occasionally ask you to write the answer to a question in the chat.
+
+Please note that when I'm presenting, I can't also monitor the chat at the same time, so please don't send me private messages. Instead, post to Everyone, briefly describing the problem you have, and you will get help by one of our TAs.
+:::
+
+## Your Turn #1 {background-color="#e3faf1"}
+
+Click the "yes" button (![](media/yes_button.png){.inline-image height="1em"}) in the Participants window. Then tell us where you work or what brought you here in the Chat window.  If you haven't already, also please create an account at https://posit.cloud, or be ready to create a project in your own RStudio from our GitHub repo
+
+```{r}
+countdown(minutes = 1, seconds = 00)
+```
+
+::: notes
+This brings us to the first interactive exercise! In the "Reactions" section of Zoom, please click on the "yes" button (![](media/yes_button.png){.inline-image height="1em"}). When you do this, it tells us as presenters that you're there, you're listening, and you're ready to continue.
+
+Also, please tell us who you are! In the chat window, please tell us where you work or what brought you to this workshop.  And if you haven't already, please take this moment to sign up for a free account at <https://posit.cloud>.
+
+We'll give you about one minute to do this exercise.
+:::
+
+## Orientation to the Course {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+Great, now that we have technology squared away, let's move ahead and learn about the scope of today's learning.
+:::
+
+## The Data Analysis Pipeline
+
+![](media/data_analysis_pipeline.png){.centered}
+
+::: notes
+This workshop is a gentle introduction to data science designed for healthcare professionals and researchers who don't have a background in programming. This slide shows a high-level conceptual framework of the most important steps of the data analysis process.
+
+You always start by importing data and cleaning or "tidying" it up.
+
+Then you start an iterative process of exploratory data analysis, which usually requires some data transformation.
+
+The main engines of knowledge generation are visualization and modeling.
+
+Finally, you need to communicate your results.
+
+We will introduce the basics of all of these steps today, with the exception of modeling.  Please note: there is more material in these slides than we have time in this workshop, but I wanted to leave all of this here for you to peruse on your own time.  We will definitely be skipping some of the optional slides today.
+:::
+
+## Lecture Slides
+
+![](media/slide_example.png){.two-thirds fig-align="center"}
+
+::: notes
+In general, we will introduce new concepts with lecture slides like this one. We try to illustrate the concepts in a way that makes it easier to learn how to write code. Importantly, you will have access to the slides and be able to look at them again after you leave this course.
+:::
+
+## Timed Interactive Coding Exercises
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+![](media/your_turn_example.png){.bordered}
+:::
+
+::: {.column width="50%"}
+![](media/rstudio_example.png)
+:::
+:::
+
+::: notes
+After we present you with explanations, we'll then practice these new skills with timed interactive coding exercises. For the coding exercises, we set up a training environment on the web specifically for this course.
+
+Please note that these exercises are timed. It's not essential that you finish each exercise, but it's essential that you try. When the time is up, I ask that everyone stop working. After each coding exercise, we will come back together, and I will live code the exercise to catch everyone up.
+:::
+
+## Code of Conduct {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](media/no_harassment.png){.half fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](media/no_recordings.png){.half fig-align="center"}
+:::
+:::
+
+<https://example.com>
+
+::: notes
+One more serious thing I need to point out, since this is an interactive course - we want to provide a welcoming and supportive environment for all people, regardless of background or identity.
+
+So we have a strict no-harassment policy: this includes abusive, offensive, or degrading language, in writing or in voice.
+
+We also want people to feel that they can be themselves, especially in breakout rooms. While we will be recording this main session, we ask that participants refrain from taking screenshots or recording their fellow learners.
+:::
+
+## Your Turn #2 {background-color="#e3faf1"}
+
+Meet and greet! We will send you into breakout rooms, where you will have a few minutes to meet one of our TAs and some of your fellow participants.
+
+::: notes
+This brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.
+
+For this exercise, we encourage you to turn on your microphone and camera, if you're comfortable.
+
+At the 10 [or less, make a judgment call] min mark, we'll bring everyone back into the main session.  Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you're in this session.
+:::
+
+## Next Up: Introduction
+
+Our next topic is:
+
+[Part 1: Introduction](https://example.com)
+

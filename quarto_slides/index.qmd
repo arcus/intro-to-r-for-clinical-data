@@ -1,0 +1,22 @@
+---
+format: 
+  revealjs:
+    theme: [serif, custom.scss]
+    scrollable: true
+    logo: media/chopr.png
+    footer: Arcus Education / Children's Hospital of Philadelphia (CHOP) R User Group
+    css: styles.css
+---
+
+## Introduction to R for Clinical Data {.smaller}
+
+Presented by: Arcus Education / Children's Hospital of Philadelphia (CHOP) R User Group
+
+
+Slide decks (click on any title):
+
+* [Welcome](https://example.com)
+* [Part 1: Introduction](https://example.com)
+* [Part 2: Visualize](https://example.com)
+* [Part 3: Transform](https://example.com)
+* [Part 4: Dashboards](https://example.com)

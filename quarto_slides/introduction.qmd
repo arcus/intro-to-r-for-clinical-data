@@ -1,0 +1,829 @@
+---
+format: 
+  revealjs:
+    theme: [serif, custom.scss]
+    scrollable: true
+    logo: media/chopr.png
+    footer: Arcus Education / Children's Hospital of Philadelphia (CHOP) R User Group
+    css: styles.css
+---
+
+-   Use keyboard arrow keys to
+    -   advance ( → ) and
+    -   go back ( ← )
+-   Type "s" to see speaker notes
+-   Type "?" to see other keyboard shortcuts
+
+```{r echo = FALSE}
+library(countdown)
+```
+
+::: notes
+Hi all, this slide will be helpful for you if you want to use these slides on your own later.  We'll paste the link to this slide deck in the chat.
+:::
+
+
+## Part 1: Introduction {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+
+::: notes
+Good afternoon, everyone!  In this session we're going to cover an introduction to R, RStudio (aka Posit), and R Markdown / Quarto.
+:::
+------------------------------------------------------------------------
+
+::: {.columns .v-center-container}
+::: {.column .small-text width="33%"}
+![](media/r_logo.png){.two-thirds}
+
+
+
+:::
+
+::: {.column .small-text width="33%"}
+![](media/rstudio_logo.png){.half}
+
+:::
+
+::: {.column .small-text width="33%"}
+![](media/quarto.png)
+
+:::
+:::
+
+
+::: {.columns .v-center-container}
+::: {.column .small-text width="33%"}
+**R** Programming language for data analysis
+:::
+
+::: {.column .small-text width="33%"}
+**RStudio** Integrated development environment (IDE)
+:::
+
+::: {.column .small-text width="33%"}
+**Quarto** Computational document format
+:::
+:::
+
+
+::: notes
+I'm sure you all are excited to get started programming and we will do that in just a few minutes.
+
+Before we do that I want to introduce you to 3 terms that may or may not be new to you.
+
+The first is **R**. R is a statistical programming language that's great for doing data analysis. There are a lot of features that make R great:
+
+-   R is **open source**, which means that it is "free" in two ways -- in the meaning of having **no cost** and also in that can be used widely **without intellectual property concerns or licensing restrictions**.
+-   R makes it possible to **wrangle** (arrange, reshape, and organize) complex data sets, and
+-   R can produce publication-quality visualizations.
+
+There is also an open and welcoming community of R users, which is just as important, if not more important, as the actual underlying details of the language.
+
+Then, there's **RStudio**. RStudio was the original name of a company as well as the name of a piece of software the company makes (and makes available in both free and paid versions). A year ago, the company [changed its name from RStudio to Posit](https://www.rstudio.com/blog/rstudio-is-becoming-posit), but you'll still hear people call the company by its old name.
+
+You can think of RStudio (the software) as a fancy text editor for writing R code. The technical term for a fancy text editor for writing code is "Integrated Development Environment", or IDE (you pronounce each letter, eye-dee-ee). You can run RStudio on Mac, Windows, or Linux. It can run on a local computer like your laptop, or, as we will today, on a server that is accessed using a web browser.
+
+Finally there's **R Markdown**, which many people still use, and Quarto, which is an evolution of R Markdown. Quarto is a computational document format that has executable code. Quarto also includes capabilities for annotating your work which is incredibly handy and supports multiple programming languages for mixing and matching code.
+
+R Markdown or Quarto are used to create a **computational document**, an example of [**literate programming**](https://education.arcus.chop.edu/literate-statistical-programming/). A computational document is a document that has executable code inside of it, and as we'll discuss shortly, it's a great way to perform data analysis in a reproducible fashion. You'll also hear this called "literate programming" or "literate statistical programming", because a Quarto document contains both human language (it's literate) as well as computer code (programming).
+
+With Quarto, we will usually write that executable code using the R language. However, it's actually possible to write code in Python, C++, SQL, and other languages as well. That goes beyond the scope of this workshop, but it's helpful to remember that Quarto is quite flexible.
+
+So we have R, Rstudio, and Quarto. For the remainder of this session, I'll show you how these tools come together to form the infrastructure for performing state of the art data analysis.
+:::
+
+## Getting Started With RStudio {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+Let's look at RStudio first.
+:::
+
+## RStudio: On the Web and on Your Desktop
+
+::: columns
+::: {.column .small-text width="33%"}
+![](media/posit_cloud_logo.png){.two-thirds}
+![](media/rstudio_cloud.png){.two-thirds}
+
+:::
+
+::: {.column .small-text width="33%"}
+![](media/posit_workbench_logo.png){.two-thirds}
+![](media/rstudio_cloud.png){.two-thirds}
+:::
+
+::: {.column .small-text width="33%"}
+![](media/rstudio_desktop.png) 
+
+:::
+:::
+::: columns
+::: {.column .small-text width="33%"}
+**Posit.cloud**
+
+Hosted by Posit (in the cloud)
+:::
+
+::: {.column .small-text width="33%"}
+**Posit Workbench**
+
+Hosted by you, your company, your university, on prem or in the cloud
+:::
+
+::: {.column .small-text width="33%"}
+**RStudio Desktop**
+
+Installed on your computer
+:::
+:::
+
+::: notes
+As I just mentioned, there are several versions of RStudio:
+
+**Posit.Cloud** -- a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It's hosted on a server by Posit, the company that makes this software.
+
+**Posit Workbench** -- a version of the RStudio IDE, also now known as Posit, that can be accessed from a web browser. It's hosted on a server that could be on premises or in the cloud.  You might have an instance of Posit Workbench at your workplace.
+
+**RStudio Desktop** -- a version of the RStudio IDE that is installed on a personal device like your desktop or laptop. This is what you may want to use after the course to continue learning R and working on R projects. On the course website, there are videos that show you how to install RStudio Desktop on a Mac or Windows computer.
+
+It's important to note that regardless of which version of RStudio that you use, you will be accessing the same general product -- there's no functionality in RStudio Server that you can't get in RStudio Desktop, or vice versa.
+:::
+
+------------------------------------------------------------------------
+
+## Your Turn #1 {.smaller}
+
+Go to <https://example.com> in your browser.  If you're not already logged in, log in to Posit.cloud.
+
+![](media/save_copy.png){.bordered .one-third fig-align="center"}
+
+Please click on "Save a Permanent Copy".
+
+Click "yes" (![](media/yes_button.png){.inline-image height="2em"}) once you see something like the image below.
+
+![](media/posit_cloud_example.png){.half .bordered fig-align="center"}
+
+```{r}
+countdown(minutes = 1, seconds = 0)
+```
+
+::: notes
+Now it’s your turn to get logged into Posit.cloud and make a copy of the project for yourself, that you can change and save and work with on your own account.
+
+Please click the yes (![](media/yes_button.png){.inline-image height="1em"}) button in zoom to let us know you logged in successfully.
+
+We will do our best to get everyone logged in.  If you are struggling to log in, please reach out in the chat and we will try to help you.
+
+In a course this size, we may not be able to get every participant logged in successfully.  If you can’t access the cloud, please reach out via the chat so we can connect you with a TA.  If we aren’t able to help with your specific issue, don’t worry, follow along via the slides, the course will still be valuable for you.  
+
+
+:::
+
+------------------------------------------------------------------------
+
+
+![](media/rstudio_panes.png)
+
+::: notes
+On the top left is the **Editor**. This is where you edit your files with code in them.  You might not see this pane just yet!
+
+On the bottom left is the **Console**. The console allows you to quickly run an individual R command, like for installing a package. We won't use the console very much in this course.
+
+On the top right is the **Environment** tab set. The environment (first and most frequently used tab in the set of tabs in this pane) allows you to look at the data that's loaded into R's memory. Interacting with data in the environment tab can be a little bit like working in Excel, and we'll look at that in an upcoming exercise.
+
+Finally, on the bottom right is where you find your **Files** and related tabs. We'll be using Quarto files for coding exercises.
+:::
+
+## Reproducible Data Analysis and R Markdown {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+Now that you know a bit more about the vocabulary and computing environment we'll be using, we want to contextualize **why** you might want to use R, RStudio, and R Markdown, even though you may have worked with data before in other software.
+
+One of the most important reasons to learn R is to improve the **reproducibility** of your research. One of the most powerful aspects of working in the R environment is that it makes it straightforward to produce **reproducible data analyses**, which will reduce risk and make "future you" much happier.
+:::
+
+## The Duke Cancer Scandal
+
+::: columns
+::: {.column .small-text width="50%"}
+-   Chemo sensitivity from microarrays
+-   Serious errors in data analysis
+-   Clinical trials based on flawed models
+-   Papers retracted, lawsuits settled
+:::
+
+::: {.column width="50%"}
+![](media/duke_journals.png){.two-thirds}
+:::
+:::
+
+::: notes
+Consider the following case study, which highlights potential consequences of **irreproducibile** research.
+
+In the mid-2000s, researchers at Duke University tried to use microarray gene expression data of tumor cells to predict sensitivity to chemotherapeutic agents. This approach generated a lot of excitement at the time, and the resulting work was published in high-profile journals.
+
+Unfortunately, there were a number of **serious errors** in the data analysis.
+
+Even more unfortunately, patients were enrolled in clinical trials and allocated based on **flawed models**. It's likely that some patients were actually treated with the chemo they are **least likely** to respond to rather than the chemo that's **most likely** to work.
+
+In the end, 18 papers were retracted, and Duke settled more than 10 lawsuits for an undisclosed amount of money.
+:::
+
+------------------------------------------------------------------------
+
+::: columns
+::: {.column width="45%"}
+**Duke**
+
+    "1881_at"
+
+    "31321_at"
+
+    "31725_s_at"
+
+    "32307_r_at"
+:::
+
+::: {.column width="45%"}
+**MD Anderson**
+
+    "1882_g_at"
+
+    "31322_at"
+
+    "31726_at"
+
+    "32308_r_at"
+:::
+:::
+
+Do you see the off-by-one indexing error?
+
+::: notes
+Two biostatisticians at MD Anderson uncovered these mistakes in painstaking work. Let's look at one of the errors they found.
+
+What you see on the left are the names of are a few of the hundreds of microarray probe sets -- each roughly corresponds to a gene -- that the Duke investigators reported to predict sensitivity to 5-fluorouracil.
+
+And on the right are the probe sets that the MD Anderson team got. You can see that they're not the same.
+
+Can you see what went wrong?
+
+If you look at the values long enough, you might notice a pattern: the number of the probe set that Duke reported is always one less than the number of the probe that MD Anderson found when they re-did the analysis.
+
+This is what's called an **off-by-one indexing error**. This happens when you use a tool like Excel and accidentally miss one row; or you have one dataset that has a header and another one that doesn't. The result is that all the values in the affected column are shifted by one. This is a simple error to make, but it completely invalidates all downstream results.
+:::
+
+## "Common problems are simple...
+
+::: small-text
+Off-by-one **indexing** error
+
+Sensitive / resistant **label reversal**
+
+**Confounding** in experimental design
+
+Inclusion of data from **non-reported sources**
+
+**Wrong figure** shown
+:::
+
+... and simple problems are common."
+
+::: notes
+The off-by-one indexing error was just one of many simple errors the MD Anderson team discovered.
+
+Another type of error that was pervasive in the study was label reversal; cell lines were labeled sensitive to a drug when they actually were resistant, and vice versa. That type of error can lead to a scenario where a patient gets the chemotherapy that would be predicted to be least beneficial.
+
+Other problems they identified were confounding, inclusion of data from sources that were not reported in the paper, and wrong figure shown.
+
+These are all simple errors -- people who make them aren't necessarily incompetent or negligent.
+
+Because these errors are so easy to make and because without good documentation or a reproducible workflow it's hard to catch them, they are also very common.
+:::
+
+## Point-and-Click...
+
+... is not reproducible!
+
+![](media/excel_logo.png){.one-third fig-align="center"}
+
+::: notes
+A key issue in this case study is that the Duke investigators used "point and click" tools like Excel.
+
+This prevented peers and independent investigators from catching errors in the analysis, until it was too late.
+
+Unfortunately, the Duke case study is only one example where the barrier to reproducibility was that people used graphical user interface "point-and-click" type tools for analyzing large and complicated sets of data. Excel doesn't record user actions and because of this, is fundamentally not reproducible.
+:::
+
+## Why Bother With Reproducibility? {.smaller}
+
+-   Can we redo the analysis with this month's data?
+-   Why do the data in Table 1 not seem to agree with Figure 2?
+-   Why did I decide to omit these six samples from my analysis?
+
+Your closest collaborator is **you** from 6 months ago...
+
+::: notes
+Reproducibility doesn't only help people **outside** a study understand how things were done. They also help the initial conduct of research as well. Consider the following 3 statements and ask yourself if they sound familiar.
+
+-   Can we redo the analysis with this month's data?
+-   Why do the data in Table 1 not seem to agree with Figure 2?
+-   Why did I decide to omit these six samples from my analysis?
+
+**Your closest collaborator is you from 6 months ago...**
+
+... but they don't answer your emails!
+
+Additionally, we've already seen how irreproducibility can cause real harm to human subjects, something we all want to avoid.
+:::
+
+------------------------------------------------------------------------
+
+
+
+![](media/quarto.png){.half fig-align="center"}
+
+::: notes
+Now that I have convinced you (I hope) that reproducibility is important, how do you undertake a reproducible analysis using the R language? One answer to this is **Quarto**, and another is the still very useful **R Markdown**.
+
+Quarto and R Markdown allow you to write computer code mixed in with English (or other human language) narrative annotation that documents the purpose of the code and details about the decisions you made in your analysis.
+
+Quarto, like R Markdown before it, is quickly becoming the standard for reproducible data analysis. A primary aim of this workshop is to teach you to use Quarto and to encourage you to start working it into your day to day data workflows.
+:::
+
+## Anatomy of a Quarto Document
+
+![](media/quarto_anatomy.png){fig-align="center"}
+
+::: notes
+Quarto documents are composed of 3 basic types of building blocks.
+
+The first is the **header** which includes information about the document, such as its title, author, and the desired output format when the document is rendered. A lot of this information is optional so a header can be pretty short, like the one we see here, or much longer.
+
+The second type of building block is **text**. Text can include special kinds of marks (Markdown) that add styling. This includes hash marks that turn a line of text into a header, asterisks that can create italics, lines of dashes that turn into horizontal lines, and more.
+
+The third is **code chunks**. Code chunks contain R code that can be executed to output results.
+:::
+
+## Running a Single Code Chunk {.smaller}
+
+![](media/quarto_run_chunk.png){.two-thirds fig-align="center"}
+
+Can you see the green "play" button?
+
+That's how you run this chunk!
+
+::: notes
+So how do you execute the code in the code chunks? There are a couple of ways.
+
+The first is to run the code in a single code chunk. And you do this by clicking the green right-pointing triangle on the top right of the chunk. This symbol looks like a "play" button. There are other symbols, too, including one that means "run all the code chunks that came before this one".
+:::
+
+## Rendering {.smaller}
+
+You will see ("Knit"/"Preview" instead of "Render" in R Markdown documents)
+
+::: columns
+::: {.column .small-text width="62%"}
+![](media/pre_render_quarto.png){.bordered}
+:::
+
+::: {.column .small-text width="32%"}
+![](media/post_render_quarto.png){.bordered}
+:::
+:::
+
+::: notes
+The second way to execute code is to convert the entire Quarto document into HTML (or another target format). For now we'll stick to HTML because it's the default and usually what you want. This process of converting Quarto into a target format is called "rendering".
+
+To render a document, click the button that says "Render". Then in a few moments, a rendered document will be shown.
+
+If you are working in R Markdown, like R Notebooks, you'll see the word "Preview" or "Knit" instead. That also acts to render the Markdown.
+:::
+
+------------------------------------------------------------------------
+
+::: columns
+::: {.column .small-text width="60%"}
+![](media/pre_render_detail.png){.bordered}
+:::
+
+::: {.column .small-text width="40%"}
+![](media/post_render_detail.png){.bordered}
+:::
+:::
+
+::: notes
+Let's look at this Quarto document in a little more detail. On the slide you see the Quarto document and the resulting output in HTML that was created when this document was rendered.
+
+I'd like to explain what each part of the markdown includes in a bit more detail.
+
+Again, the first block is the **header** section. The line that starts with `title:` tells R Markdown that the title should be "My Markdown Document". The line starting with `format:` communicates that when the document is rendered, we want to output to be an html document. 
+
+In the resulting HTML document there's the title "My Markdown Document" in large type letters. The header is enclosed on both sides with three dashes, and the data inside is in a format called "YAML" (spelled YAML, rhymes with Hammill). YAML, according to most people, stands for "Yet Another Markup Language", and it consists of a named field, a colon, and the value for that field.
+
+Here we also have some narrative **text** with marks such as hash marks and asterisks. Having a hash mark at the beginning of a line makes that line a header, and the more hash marks you write, the smaller the header. Depending on where you write it, asterisks serve different functions. If you use just one asterisk at the start of a line, it makes an item in a bulleted list. If you surround text on both sides by either one or two asterisks, the text renders as either italicized or bolded, respectively. This system of using special marks to indicate how text should look is called **Markdown**.
+
+Then we get to the code chunks. Don't worry about the contents of the code for now - in brief, the first code chunk asks R to generate 100 random values and then print out some summary statistics. The knitted document shows us our code in a gray box to make it visually distinct from the text; and then immediately after, the results of that code after it was executed. Code chunks are enclosed by three "backticks" (not single quotes), and the letter "r" enclosed in curly braces. Check out your keyboard now to see if you can find the backtick. It's likely in a corner of your keyboard, and in many layouts it travels alongside the tilde, or squiggle, symbol. The letter "r" enclosed in curly braces tells RStudio what language is being used, in our case, the R language.
+
+The second code chunk demonstrates that (1) in addition to text output, you can also make R create graphical plots, and (2) you can tweak the behavior of a code chunk -- note that this code chunk has an option of echo as FALSE. This tells R that you don't want it to repeat, or "echo", the code in the rendered document. Notice that while the code itself is suppressed in the rendered output document, the results of the code (that is, the graph), does appear.
+
+Now let's practice creating a Quarto document, running a code chunk, and knitting.
+:::
+
+## Your Turn #2 {.smaller background-color="#e3faf1"}
+
+Go to File \> New File \> Quarto Document. Click OK.
+
+This will give you a handy template which is used to show you a working example of a simple R Markdown document. You will be asked to provide a title and author, and you can choose any values you like, such as "Test" or "My First Markdown".
+
+Run each chunk by clicking the green "play" button (![](media/play.png){.inline-image height="1em"}). Note what happens.
+
+Render the document (![](media/render.png){.inline-image height="1em"}). Type "test" and click Save to save the HTML file. Inspect the HTML document.
+
+```{r}
+countdown(minutes = 3, seconds = 0)
+```
+
+::: notes
+It's your turn again.
+
+Follow the instructions in Your Turn #2 to - create a new R Markdown document - run all of the code chunks - knit the document
+
+When you knit the document, it will ask you for a filename to save to -- just enter "test"
+
+We will meet back in 3 minutes to review this exercise together.
+
+**Live Coding Section** (Switch to Posit and do the exercise)
+
+A few things to note as I go through this: the header starts with 3 dashes and ends with 3 dashes.
+
+I want to point out that each code chunk starts with 3 backticks and "r" in curly braces, and ends with 3 backticks. RStudio helps your recognize code chunks because it makes code chunks have a gray background.
+
+Note that we saved test.Rmd (R Markdown file) and test.html (knitted HTML file). You might wonder why you want to deal with two files. Rmd is source code document. It contains code, and to be able to use it, you need to have R installed. The Rmd file makes things reproducible and it's great to share with another data analyst or a journal. The HTML is a presentation file that you can show in any web browser. It doesn't require the user to have R installed, and it's not for running code, it's for showing your work. This is the kind of file you might share with your boss or other stakeholders who don't want to work in R or RStudio but are curious about what you did.
+
+Can anyone tell me why is the gray code box missing in the rendered document? That's right, there's an echo=FALSE, which means "hey, please don't show this code in the final document." "Echo" here means "print what we typed". Sometimes showing your code is helpful, but sometimes it can be distracting, especially if you're using Quarto to create a report that just shows results, for example, to show your PI some information about recruitment goals. If your stakeholders don't want to see the code, but just the result of the code, use "echo = FALSE".
+:::
+
+## Importing Data {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+Now that we are familiar with how to create Quarto documents we can begin the process of performing data analysis in R in earnest by importing a clinical data set.
+:::
+
+## The Data Analysis Pipeline
+
+![](media/import_phase.png){.two-thirds fig-align="center"}
+
+::: notes
+The first step in the data analysis pipeline is to bring in, or **import**, the data to your environment, which for the purposes of this workshop is R.
+
+In this workshop, we'll work with a fabricated (completely made up) data set consisting of COVID-19 laboratory test results from a hypothetical infectious disease diagnostics lab. This data is stored as a **CSV file**.
+:::
+
+## CSV
+
+![](media/csv.png){.two-thirds fig-align="center"}
+
+::: notes
+So what's a .csv file? CSV stands for **comma-separated values**. When we say this aloud, we just say each letter: C - S - V.
+
+A .csv file is a plain text file, which means you can open it in a text editor and look at it. This is different than how you may have opened .csv files in the past, using Microsoft Excel or another spreadsheet program. This is an example of what raw csv data looks like when we open it in a text editor.
+
+Here we have a .csv file with the names, medical record numbers, and dates of birth for three fictional "patients".
+
+This data structure is called **rectangular** or **"tabular"** because it falls into rows and columns, often called a table, where each row has the same number of columns, and each columns has the same number of rows.
+
+Also note that this particular .csv file has a **header** row that instead of data, has a name for each column. .csv files often have such a header row and unless we specify otherwise, when we import this data, R assumes the first line is a header row. Not all .csv files have headers, however, so be aware that you might run across these at some point.
+:::
+
+## Tidyverse {.smaller}
+
+::: columns
+::: {.column width="70%"}
+-   A consistent way to organize data
+-   Human readable, concise, consistent code
+-   Build pipelines from atomic data analysis steps
+:::
+
+::: {.column width="30%"}
+![](media/tidyverse_logo.png)
+:::
+:::
+
+::: notes
+To import our CSV data, we need some additional data analysis tools. In this course, we will be leveraging the Tidyverse.
+
+The Tidyverse is a set of tools that has become the de facto standard for doing data science with R.
+
+The basic tenets of "tidy" data analysis include: \* Data should be organized in a consistent, standardized way. Each row is an observation, and each column is a variable. This is a very common way to organize data in a spreadsheet and might sound familiar from how you may already organize data in tools like Excel. \* Programming code that acts on the data should be consistent, concise, and sound like human language as much as possible. \* Each data analysis can be broken down into a series of atomic steps, such as "select this column" or "arrange the data by the values in that column". An arbitrarily complex data analysis can be broken down as a pipeline of atomic steps.
+:::
+
+## Installing and Loading Packages
+
+::: columns
+::: {.column .small-text width="50%"}
+![](media/package.png){.half}
+:::
+
+::: {.column .small-text width="50%"}
+![](media/install_load.png)
+:::
+:::
+
+::: notes
+The **tidyverse** is package (a collection of functions, data, and help documentation) that we can use to extend the innate functionality of R, which is often referred to as "base R". In fact, tidyverse is special because it includes a suite of interrelated packages that work together to do a number of tasks related to importing, reshaping, visualizing, and analyzing data.
+
+You can download and **install** a package with the command `install.packages`. For example, to install the tidyverse package, you would go to the R Console and type `install.packages("tidyverse")`. Each package you want to use needs to be installed only once on each computer.
+
+In our Posit.cloud workspace, you won't need to install any packages for this course (as we have installed them for you). If you're using R on your own computer, however, **you will have to install packages**.
+
+Make sure you **include the quotes** around tidyverse. When to use quotes is a tricky topic that we will talk about more later in this workshop, but for now, keep in mind that you will *always* need to put quotes around the name of a package whenever using `install.packages()`.
+
+After you've installed the package, in order to use the functions that it provides, you also need to **load** the package into the computer's memory. This is done with the command `library`. So to enable all the functions in the "tidyverse" package, you type `library("tidyverse")`. Packages remain loaded until you quit or restart the R program. Every time you start a new R session you have to load each package that you want to use again, and you need to put your `library` statements in the R documents that you write, preferably near the top of the file. We'll use functions within the `tidyverse` package in this workshop when we import data, so it's useful to learn about packages now.
+
+Congratulations, you've just learned your first two R commands - `install.packages` and `library`.
+
+One of the great things about R is that there are tens of thousands of packages that are free to download and use.
+:::
+
+
+## read_csv()
+
+![](media/function_0.png){.two-thirds fig-align="center"}
+
+![](media/csv_import.png){.half fig-align="center"}
+
+::: notes
+We can import CSV files using the `read_csv()` function.
+
+Here is how you use the `read_csv` function to read a CSV file into a data frame object. A data frame is a type of object that works like a spreadsheet and holds tabular (rectangular, row-and-column based) data.
+:::
+
+## Functions
+
+![](media/function_1.png){.two-thirds fig-align="center"}
+
+::: notes
+This code construct is exceedingly common in R, and it's a good moment to explain **functions**.
+
+`read_csv()` is a **function**. Functions are defined in packages. We loaded the tidyverse package to be able to use the `read_csv` function.
+
+You may be familiar with functions from math class or perhaps also from formulas in Excel. A function takes an input, say an 'x' value, and returns an output, say a 'y' value. Functions in computer programming also take inputs and return outputs. But the inputs and outputs here are the objects that exist within the context of a programming language.
+
+For `read_csv`, the input is the file name of a CSV file; and the output is a data frame with the contents of the file.
+:::
+
+## Functions
+
+![](media/function_2.png){.two-thirds fig-align="center"}
+
+::: notes
+In the snippet of code that reads in a csv to create a data frame, we have a **function** with an **argument** that creates an **object**.
+
+The input that goes into a function is called an **argument**. The argument to a function gets put in parentheses.
+
+A function can have zero, one, or many arguments. If there is more than one argument, we use commas to separate them.
+:::
+
+## Functions
+
+![](media/function_3.png){.two-thirds fig-align="center"}
+
+::: notes
+The output of the `read_csv` function is a data frame object. You will usually want to *capture* that data frame inside of a named object so you can use it as the input for other functions, for example to summarize or visualize your data.
+:::
+
+## Functions
+
+![](media/function_4.png){.two-thirds fig-align="center"}
+
+::: notes
+To put the output of the `read_csv` function into a named object, we use the **assignment operator**.
+
+The assignment operator is a less than symbol followed by a dash and resembles an arrow pointing left. Some people like to pronounce the arrow with the word "gets."
+:::
+
+## read_csv()
+
+![](media/covid_csv.png){.two-thirds fig-align="center"}
+
+![](media/csv_import.png){.half fig-align="center"}
+
+::: notes
+Let's put these pieces together to load our covid data set.
+
+Consider this line of code. We could speak aloud the line of code above saying "covid underscore testing gets read underscore csv of covid underscore testing dot csv", or we could gloss over the underscores and just say "covid testing" and "read csv". When we talk with others about R, this is often what we do, so just be aware that you sometimes have to intuit underscores when someone is reading aloud or talking through a code issue.
+
+You might notice that one of our "covid testing" objects is put in quotes and the other one isn't.
+
+To be honest, quotes in R can be super confusing. A couple of rules are:
+
+-   Names of objects such as data frames don't get quotes.
+-   Literal file names are always put in quotes.
+-   When you're referring to a string value, like "abc123" or "jones", you have to use quotes.
+-   Names of packages, when you're installing especially, use quotes
+-   But in `library`, putting the package name in quotes is optional!
+
+Sometimes, either quoting or not quoting works. This is one of the things where you will get a good sense but not until after some trial and error. If a line of code you're working on doesn't seem to be working as you expect, sometimes adding or removing quotes can be a good place to start when trying to figure it out.
+:::
+
+## Your Turn #3 {.smaller background-color="#e3faf1"}
+
+In the Files pane, click on the folder `exercises`.
+
+Open the file titled `01 – Introduction.qmd`. Instructions for this exercise are in the text of the document.
+
+Click yes (![](media/yes_button.png){.inline-image height="2em"}) when you are done.
+
+```{r}
+countdown(minutes = 5, seconds = 0)
+```
+
+::: notes
+Once again, I want you to go into Posit.cloud, and this time you'll work with an existing file we've placed in the server for your use. You'll go into the folder called "exercises" and fine the first assignment, called "Introduction". Go ahead and open that, and read the rest of the instructions there.
+
+We'll give you five minutes for this, and when you're done, click the "yes" button so we know how folks are doing.
+
+**After the timer finishes, do the exercise live so they can see what it looks like...**
+
+I'm going to start by running this code chunk. I can go to the "Run" button at the top right of the Source pane, or I can click the "run" or "play" button on top of the chunk.
+
+When I'm coding, I like to break my code up into chunks of only a few lines of code at a time. That way, if I have to make a change, it's easy to just run the code I need to re-run, without re-running the whole thing.
+
+Now, did anything change when I ran this cell? Yes! In the environment pane, a new data object appeared. And I can interact with this object in several ways. I can click the triangle beside the object's name, or I can click on the object name itself.
+
+So, let's answer the questions. How can I tell how many rows and columns there are? I can look beside the name of the object in my Environment pane and I see a number of observations, which are rows, and a number of variables, which are columns. I can also use the data view that opens up in my source pane here. At the very bottom there's a count of rows and columns. Did anyone else figure out the answer in a different way?
+
+What about question two? Any ideas? Well, remember that we want our data analysis to be reproducible, so everything we do to the data is written in code. Changing data using point and click isn't reproducible. That's an important reason why R doesn't have a data editing feature using point and click.
+
+Does anyone want to put in their answer for number 3? \[Correct answers: 4, 107\] Great!
+
+And number 4? (865 positive tests, \_\_ in the first 30 days).
+
+If I want to check my answers, I can go in the Files pane, click beside the up arrow to go into the parent directory, go down into solutions, and open the solutions for our first assignment.
+:::
+
+## Recap {.smaller}
+
+::: {.columns .one-third .centered}
+::: {.column .tiny-text width="33%"}
+![](media/r_logo.png){.half .centered}
+
+Programming Language
+:::
+
+::: {.column .tiny-text width="33%"}
+![](media/rstudio_logo.png){.one-third .centered}
+
+IDE (Editor)
+:::
+
+::: {.column .tiny-text width="33%"}
+![](media/quarto.png){.one-third .centered}
+
+Document Format
+:::
+:::
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/package.png){width="60px" fig-align="center"}
+:::
+
+::: {.column .small-text width="75%"}
+**Packages** extend the functionality of R. Install with `install.packages()` and load with `library()`
+:::
+:::
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/function_4.png)
+:::
+
+::: {.column .small-text width="75%"}
+**Functions** do stuff. They accept **Arguments** as input and return an **Output**. Capture an output in an Object using the **assignment operator** ( `<-` ).
+:::
+:::
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/csv_import.png)
+:::
+
+::: {.column .small-text width="75%"}
+**Importing Data** is the first step of data analysis. Use `read_csv()` from the `tidyverse` package to import data stored in a **CSV file**.
+:::
+:::
+
+::: notes
+We started by defining and differentiating **R** (the programming language) from **RStudio** (the integrated development environment -- IDE -- or editor) and **R Markdown** (the document format we use for reproducible data analysis). Then we explored RStudio and R Markdown more closely.
+
+We then looked at how packages extend the functionality of R. Tidyverse is a package that is actually shorthand for a number of related packages. We'll work with tidyverse a lot today.
+
+We also looked at how to use functions. Functions, like the read_csv function, do useful things. You provide some arguments, and functions will return an output, which you can store in an object, if you want to.
+
+Finally, we tackled the first step of data analysis: importing (or you'll sometimes hear people use the word "ingesting") data. In our case today, we're going to import data from a .csv file.
+:::
+
+## What Else?
+
+Obviously in a short workshop we can barely scratch the surface... here are some other ideas to get you thinking.
+
+::: notes
+At the end of each session I'm including a "what else" section to introduce you to "what else" there is out there for your to explore and learn about after completing this course.
+:::
+
+## Cheat Sheets
+
+![](media/cheat_sheet_browse.png){.bordered .two-thirds fig-align="center"}
+
+::: notes
+To find official cheat sheets, go to the Help menu in RStudio and choose "Cheat Sheets". You can look around the short list provided, which includes great options for beginners such as "RStudio IDE Cheat Sheet", "R Markdown Cheat Sheet", and more. You can also "Browse", and on the RStudio website you'll find other cheat sheets as well, including the Data Import cheat sheet.
+
+RStudio's Data Import cheat sheet helps with importing data from file types similar to CSV but with other delimiters (for example, TSV, or tab-delimited values files). Cheat sheets for the RStudio IDE and Markdown can reinforce what you've learned so far in this workshop and help you extend your capabilities.
+:::
+
+## R for Data Science {.smaller}
+
+::: columns
+::: {.column width="30%"}
+![](media/r4ds.png)
+:::
+
+::: {.column width="70%"}
+In English: <https://r4ds.had.co.nz/>
+
+English unofficial solutions at <https://jrnold.github.io/r4ds-exercise-solutions/index.html>
+
+In Spanish: <https://es.r4ds.hadley.nz/>
+:::
+:::
+
+::: notes
+*R for Data Science* is a free text that provides lots of helpful explanation and examples. The [section on data import](https://r4ds.had.co.nz/data-import.html) goes into much more detail than we were able to do in this brief workshop.
+
+The entire text is available [in English](https://r4ds.had.co.nz/) and [in Spanish](https://es.r4ds.hadley.nz/). There's also an [unofficial solutions guide](https://jrnold.github.io/r4ds-exercise-solutions/index.html) (only available in English) to allow you to check your work.
+:::
+
+## File Formats
+
+![](media/file_types.png){.two-thirds fig-align="center"}
+
+::: notes
+Not all data is in CSV files, and fortunately R supports a huge number of other file formats, and here are some of the packages that help import or export them:
+
+-   Readxl: Microsoft Excel
+-   Haven: SPSS, Stata, and SAS files
+-   Googlesheets: Google Sheets
+-   Rvest: web scraping
+-   Jsonlite: JSON data and many APIs on the web
+:::
+
+## Databases
+
+![](media/databases.png){.two-thirds fig-align="center"}
+
+::: notes
+You can also connect to a large number of **databases** directly in R to pull your data. For example, you can connect to SQL databases including MySQL and Oracle, as well as using APIs (application programming interfaces) for data collection applications like REDCap and websites with API access like PubMed or the New York Times.
+:::
+
+## Other Output Formats
+
+![](media/document_output.png){.two-thirds fig-align="center"}
+
+::: notes
+In addition to HTML, R Markdown documents can be "knitted" into a number of additional formats including PDF, Microsoft Word, PowerPoint, and even interactive dashboards. We won't go into these additional formats today but it's helpful to know that you can avoid error-prone cut and paste when you need to create documentation about your research and data analysis.
+:::
+
+## R Interface to Python {.smaller}
+
+::: columns
+::: {.column width="40%"}
+![](media/r_python.png)
+:::
+
+::: {.column width="60%"}
+::: {.code-block .small_text}
+\`\`\`{python}
+
+import pandas
+
+covid_testing.info()
+
+\`\`\`
+:::
+:::
+:::
+
+::: notes
+In addition to R, R Markdown supports many other programming languages, including Python.
+
+So you can mix code chunks written in R with code chunks written in, say, SQL or Python. While we won't get into the use of other languages in this workshop, it's useful to be aware of multiple language support, especially for teams in which some users prefer R and others Python.
+:::
+
+## Next Up: Visualize
+
+Our next topic is:
+
+[Part 2: Visualize](https://example.com)

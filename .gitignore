@@ -1,0 +1,22 @@
+
+# Don't hold on to R session data
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# In Quarto, don't hold on to the rendered site or to session data
+
+quarto_slides/_site
+quarto_slides/.Rproj.user
+quarto_slides/.Rhistory
+quarto_slides/.RData
+quarto_slides/.Ruserdata
+quarto_slides/_publish.yml
+
+# Don't hold on to MacOS artifacts
+
+.DS_Store
+*/.DS_Store
+

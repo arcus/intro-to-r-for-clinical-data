@@ -1,0 +1,447 @@
+---
+format: 
+  revealjs:
+    theme: [serif, custom.scss]
+    scrollable: true
+    logo: media/chopr.png
+    footer: Arcus Education / Children's Hospital of Philadelphia (CHOP) R User Group
+    css: styles.css
+---
+
+-   Use keyboard arrow keys to
+    -   advance ( → ) and
+    -   go back ( ← )
+-   Type "s" to see speaker notes
+-   Type "?" to see other keyboard shortcuts
+
+```{r echo = FALSE}
+library(countdown)
+```
+
+## Part IV: Dashboards {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+## The Data Analysis Pipeline
+
+![](media/communicate_phase.png){.two-thirds fig-align="center"}
+
+------
+
+Dashboards visualize key data on demand
+![](media/dashboard_example.png)
+
+::: notes
+Dashboards visualize key data on demand. This allows domain experts, who are often not trained in performing analytics, to quickly find essential information to do their work.
+:::
+
+------
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+![](media/flexdash_logo.png)
+:::
+
+::: {.column width="50%"}
+Turn an R Markdown document into an interactive dashboard
+:::
+:::
+
+::: notes
+Here it comes in handy if you’ve coded you analysis reproducibly in R Markdown – because there’s flexdashboard, an R package that allows you to turn an R Markdown document into an interactive dashboard.
+:::
+
+-------
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+![](media/flexdash_pre_render_cols.png)
+:::
+::: {.column width="50%"}
+![](media/flexdash_post_render_cols.png)
+:::
+:::
+
+::: notes
+When you create a new flexdashboard, it will automatically generate some code. Some of this should look familiar. You have the header that starts and end with 3 dashes - what's new is that the output is no longer an html_document, it's a flexdashboard. Also note that there is another option specified: orientation: columns. This is how you tell flexdashboard that you want the content organized in columns. 
+
+All the content of the dashboard goes below the header. 
+
+To add a column, you write “Column” and a whole bunch of dashes (at least 5 I believe). It actually doesn’t matter whether you write “Column” here, but by convention this is what people do to remind themselves that you’re organizing your dashboard into columns.
+
+This is actually a different way to write a level-2 heading in R Markdown, which 
+
+To add a chart inside a column, add a level-3 header – by writing a line starting 3 hashtags – followed by the name of the chart. 
+
+In this case, we’re adding two columns. The first column has one chart in it, labeled “Chart 1”, and the second has two charts in it, labeled “Chart 2” and “Chart 3"
+
+It’s not important that you remember exactly how to define columns or charts. Usually you will start with a template and then add content to it.
+:::
+
+-----
+
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+![](media/flexdash_pre_render_rows.png)
+
+:::
+::: {.column width="50%"}
+![](media/flexdash_post_render_rows.png)
+:::
+:::
+
+::: notes
+If you want to change your chart to be primarily organized as rows, all you have to do is to change the orientation: field in the header to “rows.” 
+
+To remind yourself that your dashboard is organized in rows, you should also change the level-2 header to say “Row” although that isn’t strictly necessary.
+:::
+
+## Your Turn #1 {.smaller background-color="#e3faf1"}
+
+Open 04 – Dashboards.Rmd to work with a draft COVID19 flexdashboard. This file will look a little different than your previous Quarto files. Don’t fret – this R Markdown file works the same as Quarto! Do the following:
+
+1. "Knit" (![](media/knit.png){.inline-image height="1em"}) the document to see what the dashboard looks like. You may need to hit "Try Again" to get the pop up window to work.
+2.  Change the Test Volumes Over Time plot so that it visualizes the fraction of positive tests on a given day. (Hint: map the fill aesthetic to result). Knit the document again and note the change.
+3. Change the layout from columns to a row orientation. Knit the document again and note the change.
+
+Click "yes" ![](media/yes_button.png){.inline-image height="2em"} when you are finished!
+
+```{r}
+countdown(minutes = 5)
+```
+
+::: notes
+Open 04 – Dashboards.Rmd to work with a draft COVID19 flexdashboard. RStudio will open the file in "Source" mode so this will look a little different than your previous Quarto files. Don’t fret – this R Markdown file works the same as Quarto! Do the following:
+
+Knit the document to see what the dashboard looks like. You may need to hit "Try Again" if you see a pop-up window.
+
+Change the Test Volumes Over Time plot so that it visualizes the fraction of positive tests on a given day. (Hint: map the fill aesthetic to result). Knit the document again and note the change.
+Change the layout from columns to a row orientation. Knit the document again and note the change.
+Click “yes” when you are finished!
+:::
+
+## Making Plots Interactive {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+A very common feature that you find in many dashboards and make them more user friendly is to make them interactive – by allowing users to hover over specific places to find out more information, and zoom into the data.
+:::
+
+## Plotly Makes ggplot Interactive! {.smaller}
+
+Start with some ordinary ggplot code:
+
+::: {.code-block}
+    ggplot(data = data_frame) +
+      geom_function(mapping = aes(mappings))
+:::
+
+Save that as `my_plot`, then add some plotly magic ...
+
+::: {.code-block}
+    my_plot <- ggplot(data = data_frame) +
+        geom_function(mapping = aes(mappings))
+    ggplotly(my_plot)
+:::
+
+![](media/plotly_logo.png){width="200px"}
+
+::: notes
+Plotly is a package that provides functionality to make ggplots interactive. 
+
+Step 1. Start with the ggplot template for making any kind of plot
+** Step 2. Capture the ggplot in an object. For example, here I capture the plot as an object named “my_plot”
+** Step 3. Write ggplotly(my_plot)
+
+And under the hood, plotly works by generating HTML and JavaScript code that gets embedded into the dashboard website. 
+
+:::
+
+## Your Turn #2 {.smaller background-color="#e3faf1"}
+
+Return to 04 – Dashboard.Rmd. 
+
+Make the Test Volumes Over Time plot interactive.
+
+Knit the document again to note the change. Hover over the interactive plots. Note what happens when you click on the various buttons that appear above the plot.
+
+Click "yes" ![](media/yes_button.png){.inline-image height="2em"} when you are finished.
+
+```{r}
+countdown(minutes = 3)
+```
+
+## Interactive Tables {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+Another very common element in dashboards are interactive tables.
+:::
+
+## DT Makes data frames Interactive! {.smaller}
+
+Start with a regular data frame:
+
+::: {.code-block .small-text}
+covid_testing
+:::
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+And pipe that to `datatable()` from the DT package:
+
+![](media/dt_logo.png){width="100px"}
+:::
+:::
+
+::: {.code-block .small-text}
+covid_testing %>%
+  datatable()
+:::
+
+::: notes
+We can use the DT package to turn a data frame into an interactive table.
+
+This is even easier than plotly.
+
+Step 1. Start with the data frame you’d like to show
+Step 2. Pipe it to the function datatable() which is part of the DT package.
+:::
+
+## Your Turn #3 {.smaller background-color="#e3faf1"}
+
+Return to 04 – Dashboards.Rmd. Let’s try to display a list of positive results in the Details of Positive Test Results area of the plot. 
+
+1. Note that this area currently shows the contents of the `covid_testing` data frame but doesn't actually filter for positive results. Add to the pipeline a `filter()` statement that selects only those rows where the result value is "positive" (Hint: "positive" must be in quotes). Knit (![](media/knit.png){.inline-image height="1em"}) the dashboard and note the change.
+2. In order to use the `datatable()` function, we first need to load the DT package. Add a line to the setup chunk (all the way on top!) to load the DT package.
+3. Now make the table interactive! Knit (![](media/knit.png){.inline-image height="1em"}) the dashboard and note the change.
+Click "yes" ![](media/yes_button.png){.inline-image height="2em"} when you are finished!
+
+```{r}
+countdown(minutes = 3)
+```
+
+
+::: notes
+Return to 04 – Dashboards.Rmd. Let’s try to display a list of positive results in the Details of Positive Test Results area of the plot. 
+
+Note that this area currently shows the contents of the covid_testing data frame but doesn’t actually filter for positive results. Add to the pipeline a filter() statement that selects only those rows where the result value is "positive" (Hint: "positive" must be in quotes). 
+
+Knit the dashboard and note the change.
+In order to use the datatable() function, we first need to load the DT package. Add a line to the setup chunk (all the way on top!) to load the DT package.
+Now make the table interactive! Knit the dashboard and note the change.
+Click "yes" when you are finished!
+
+:::
+
+## Add Styling {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+----
+
+![](media/flexdash_themes.png)
+
+::: notes
+There are a few themes that come included with flexdashboard by design.
+:::
+
+## Adding a Theme 
+
+```
+---
+title: "My Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+	orientation: rows
+    theme: cerulean
+---
+```
+
+::: {.small-text}
+See <https://rmarkdown.rstudio.com/flexdashboard/using.html#themes>
+:::
+
+::: notes
+Under the hood, themes use a technology called CSS or cascading style sheets. But all of this is abstracted away, and all you have to do is add a theme definition in the header of the Rmd document.
+
+This really becomes useful when your organization has created a CSS style sheet that conforms to brand guidelines; can often find those and directly use in flexdashboard.
+
+:::
+
+## COVID 19 Dashboard Hackathon! {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+In this last exercise of the workshop, we will again send you into breakout rooms. Your TA will share their screen with the COVID19 flexdashboard source code open. The objective is to work as a team to tweak the dashboard using the tools we covered today. In 15 minutes we’ll bring everyone back and take a look at what each group has built!
+
+Remember: your TA probably isn’t a flexdashboard expert, and there’s only going to be 15 minutes. But there are a couple of improvements you can make with the tools we’ve covered today, for example the style, or you might want to add another graph or table, or add a column to the table, or change the color theme of the graph, or tweak the axis labels to make them more descriptive. Have fun!
+
+:::
+
+## Recap {.smaller}
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/flexdash_logo.png){.two-thirds fig-align="center"}
+:::
+
+::: {.column width="75%"}
+Turn R Markdown documents into interactive dashboards with `flexdashboard`
+
+:::
+:::
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/plotly_logo.png){.two-thirds fig-align="center"}
+:::
+
+::: {.column width="75%"}
+Turn ggplot objects into interactive plots with `plotly`
+
+:::
+:::
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/dt_logo.png){fig-align="center"}
+:::
+
+::: {.column width="75%"}
+Turn data frames into interactive tables with `DT`
+
+:::
+:::
+::: notes
+
+Let's recap!
+:::
+
+## What Else?
+
+::: {.columns .v-center-container}
+::: {.column width="33%"}
+![](media/diagrammer.png)
+:::
+::: {.column width="33%"}
+![](media/leaflet.png)
+:::
+::: {.column width="33%"}
+![](media/formattable.png)
+:::
+:::
+::: {.columns .v-center-container}
+::: {.column width="33%"}
+![](media/networkd3.png)
+:::
+::: {.column width="33%"}
+![](media/highchartr.png)
+:::
+::: {.column width="33%"}
+![](media/heatmaply.png)
+:::
+:::
+
+::: {.small-text}
+See <https://gallery.htmlwidgets.org/>
+
+:::
+
+::: notes
+Of course we have barely scratched the surface of packages that can help you visualize data in cool, interactive ways.  Here is a slide of just a handful of examples of ways you can communicate your findings effectively!
+:::
+
+-------
+
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+![](media/shiny_logo.png)
+:::
+::: {.column width="50%"}
+A framework for developing interactive web applications in R: deploy in shinyapps.io, Shiny Server, or RStudio Connect.
+:::
+:::
+
+::: notes
+Shiny allows you to build full blown web apps with a lot more functionality than a simple dashboard, using a web front end and back end to serve up dynamic content.  
+:::
+
+## What Next? {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+So this brings us to the end of the workshop! One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that.
+:::
+
+## Access Your Own R and RStudio! {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](media/rstudio_desktop.png)
+:::
+
+::: {.column width="50%"}
+Information on how to use these materials in your own computer: <https://example.com> 
+
+:::
+:::
+
+
+::: notes
+
+Also, if you'd like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them.
+:::
+
+------------------------------------------------------------------------
+
+::: {.columns .v-center-container}
+::: {.column .tiny-text width="33%"}
+![](media/r4ds.png){.half}
+
+<https://r4ds.had.co.nz>
+:::
+
+::: {.column .tiny-text width="33%"}
+![](media/r4ds_solutions.png){.half}
+
+<https://jrnold.github.io/r4ds-exercise-solutions/>
+:::
+
+::: {.column .tiny-text width="33%"}
+![](media/r4ds_hex.png){.two-thirds}
+
+<https://rfordatasci.org>
+:::
+:::
+
+::: notes
+I wanted to point out that "R For Data Science" by Garrett Grolemund and Hadley Wickham is the de-facto standard introduction to data science with R.
+
+This course is designed so that you can pick up this book and keep learning - we use the same packages and conventions as in that book. The entire text is available for free at this address. Each chapter has a lot of exercises,
+
+And there's a solutions manual for the exercises online, which makes this great for self-paced learning.
+
+There's also an amazing online community that was borne out of the book that has evolved into an incredibly vibrant and active slack community filled to the brim with resources and cheerful folks in all stages of their data science journey.
+:::
+
+------
+
+![](media/rmarkdown_definitive_guide.png)
+
+<https://bookdown.org/yihui/rmarkdown/>
+
+::: notes
+Our very own Rose Hartman is acknowledged in this great book, which will help you master the markdown used in Quarto and R Markdown.
+:::
+
+## Participate in Tidy Tuesday
+
+![](media/tidy_tuesday.png){.two-thirds fig-align="center"}
+
+::: notes
+The aforementioned R4DS community has an initiative known as "Tidy Tuesday" -- each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.
+
+If you do end up participating, we'd love to hear about it in the CHOPR slack!
+:::
+
+## Thank You! {.smaller}
+
+Thanks to all our helpers and to all of you!
+
+Again, all the materials you need are at <https://example.com>, including a link to these slides.
+

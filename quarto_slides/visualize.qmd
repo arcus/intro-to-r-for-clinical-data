@@ -1,0 +1,814 @@
+---
+format: 
+  revealjs:
+    theme: [serif, custom.scss]
+    scrollable: true
+    logo: media/chopr.png
+    footer: Arcus Education / Children's Hospital of Philadelphia (CHOP) R User Group
+    css: styles.css
+---
+
+-   Use keyboard arrow keys to
+    -   advance ( → ) and
+    -   go back ( ← )
+-   Type "s" to see speaker notes
+-   Type "?" to see other keyboard shortcuts
+
+```{r echo = FALSE}
+library(countdown)
+```
+
+## Part II: Visualize {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+Alright, now let's go into Data Viz!
+:::
+
+## The Data Analysis Pipeline
+
+![](media/visualize_phase.png){.two-thirds fig-align="center"}
+
+## covid_testing
+
+![](media/covid_testing_df.png){width="85%" fig-align="center"}
+
+::: notes
+The data we will use in this workshop is the data frame we are calling `covid_testing`, which consists of fabricated (that is, completely fake) demographic and testing data for Covid tests early in the Covid-19 pandemic. Each row of data represents a covid test that was analyzed by our fake lab.
+
+This is what that data looks like. Go ahead and take a peek at it in your own data viewer as well.
+:::
+
+## Your Turn #1 {.smaller background-color="#e3faf1"}
+
+Consider the covid_testing data frame.
+
+What do you think a plot would look like in which:
+
+-   the x-axis represents `pan_day` (day of the pandemic), and
+-   the y-axis represents the number of tests that were performed on that day?
+
+```{r}
+countdown(minutes = 1, seconds = 0)
+```
+
+::: notes
+So now I'm going to ask you to imagine what the following plot would look like.
+
+So just take a few seconds and try to visualize this graph in your mind or doodle it on a piece of paper in front of you.
+
+Everybody have an idea? Click "yes" ![](media/yes_button.png){.inline-image height="2em"} to let me know to go on!
+:::
+
+## Your Turn #2 {.smaller background-color="#e3faf1"}
+
+![](media/small_histogram.png){fig-align="center"}
+
+What is the name of this kind of plot?
+
+Type the answer into the chat!
+
+::: notes
+So what I've asked you to imagine is a plot in which we have the count or the frequency of a test on the y axis, and that's broken down along the pandemic day over the x axis. Anybody know the name of that type of plot that has the count of a thing on the y axis and the distribution of those counts along the x axis?
+
+Go ahead and type into the chat!
+:::
+
+## Your Turn #3 {.smaller background-color="#e3faf1"}
+
+Type the following code in the RStudio console to make a graph.
+
+Pay attention to the spelling, capitalization, and parentheses!
+
+::: code-block
+```         
+ggplot(data = covid_testing) + 
+  geom_histogram(mapping = aes(x = pan_day))
+```
+:::
+
+```{r}
+countdown(minutes = 1, seconds = 0)
+```
+
+::: notes
+For the next step, we'd like for you to go into the **console** to practice running some code there. The console is usually in the lower left pane (or it might take up the whole left side, if you don't have any files open yet).
+
+Don't panic if the code we ask you to input seems incomprehensible right now or you get an error message. We'll walk you through what it all means!
+
+In the console, please type in the following. While you can certainly cut and paste from the slides if you have those open, there is sometimes an advantage to typing the code by hand, because it helps you develop "muscle memory" about how to construct code. Pay attention to the spelling, capitalization, and parentheses!
+
+And yes, you can hit "Enter" after that plus sign and keep typing on the next line. There will be a little plus sign on the second line that lets you know that the console is accepting the second line as a continuation of the first. When you're finished, just hit "Enter" to run that code.
+:::
+
+------------------------------------------------------------------------
+
+![](media/r_console.png){fig-align="center"}
+
+::: notes
+When you run the code, you'll see a graph open up in the lower right pane, and your console should look something like what's on this slide. It looks like an error in the console but is actually just a message (even though it's in a scary red color).
+
+R lets you know that when you ask it to draw a histogram, you should probably tell it how wide each bin should be, because this affects the granularity of the data displayed. You can either set the number of bins (say, 10 bins or 100 bins) or you can set the bin width (like 1 to make a bin 1 day wide, 7 to make a bin one week wide, etc.)
+:::
+
+------------------------------------------------------------------------
+
+![](media/covid_histogram.png){fig-align="center"}
+
+::: code-block
+```         
+ggplot(data = covid_testing) + 
+  geom_histogram(mapping = aes(x = pan_day))
+```
+:::
+
+::: notes
+When we asked you to imagine what this plot might look like - the number of Covid tests that were performed on a given day over time -- you might have imagined something like this. Initially you have very few tests that are being run, maybe because the pandemic hasn't hit this area much yet or because the test isn't yet broadly available. And at some point the number of tests increases and remains at a high level. But this simple visualization tells you so much more than that general shape. You can see that by 30 days, the testing ramp-up settles. And there appear to be some interesting things going on after day 60 that you might want to look into further.
+
+Even though this graph isn't publication-perfect (at least not yet), it's still very useful for honing your knowledge about the data.
+:::
+
+------------------------------------------------------------------------
+
+![](media/ggplot2_hex.png){.half fig-align="center"}
+
+::: notes
+We'll be using the `ggplot2` package for creating graphics. `ggplot2` is part of the tidyverse so it will get loaded when you load the tidyverse package.
+
+`ggplot2` (and its main function, plain old `ggplot` without the 2) provides a "**grammar of graphics**" for data visualization. The idea of having a "grammar" for something is actually pretty common in R. Essentially, there should be a consistent way to build any type of "thing" in R, in this case, any type of graph. This makes it easier to learn and also easier to for humans to read the code later and make sense of it. And that's super important because most people who use R are not programmers.
+
+The idea of the grammar of graphics is that you should be able to specify any type of graph by specifying the data that goes into it, the type of graph that you want to make, and a mapping that describes how the data should be represented as visual marks on that graph.
+
+Having a consistent grammar means that once you learn how to make a histogram that knowledge can be applied to make a scatter plot with little extra effort. This makes it easy to generate lots of different graphs quickly which helps you understand your data more quickly.
+
+Also, `ggplot2` graphs look great and the package can be used to generate publication-quality plots.
+:::
+
+## ggplot()
+
+![](media/covid_ggplot_anatomy_0.png){.two-thirds fig-align="center"}
+
+::: notes
+This is the ggplot code we used. Let's take a look at what this includes.
+:::
+
+## ggplot()
+
+![](media/covid_ggplot_anatomy_1.png){.two-thirds fig-align="center"}
+
+::: notes
+We always start with `ggplot()`. Notice that while the **package** is called "ggplot2", the function doesn't have the two... it's just "ggplot".
+:::
+
+## ggplot()
+
+![](media/covid_ggplot_anatomy_2.png){.two-thirds fig-align="center"}
+
+::: notes
+In the parentheses just after `ggplot`, we provide a data frame to start with, in this case, our `covid_testing` data frame.
+:::
+
+## ggplot()
+
+![](media/covid_ggplot_anatomy_3.png){.two-thirds fig-align="center"}
+
+::: notes
+We build our plot across several different layers, each one providing more information about the graphic we want, so we include a plus sign at the end of the first line to say "wait, we're not done yet!"
+:::
+
+## ggplot()
+
+![](media/covid_ggplot_anatomy_4.png){.two-thirds fig-align="center"}
+
+::: notes
+In the second line, we describe what kind of geometric representation we want -- a histogram, which we communicate to R using `geom_histogram()`.
+:::
+
+## ggplot()
+
+![](media/covid_ggplot_anatomy_5.png){.two-thirds fig-align="center"}
+
+::: notes
+We also add some mappings inside the parentheses of `geom_histogram`, explaining which data from the data frame should be displayed in the histogram. We use `aes()` (short for "aesthetic" or "aesthetic mapping") to tell ggplot how to draw the visualization.
+:::
+
+## ggplot()
+
+![](media/covid_ggplot_anatomy.png){.two-thirds fig-align="center"}
+
+::: notes
+Inside the parentheses of "aes" we specify the x-axis by including "x = variable". In this case, we write "x = pan_day". We only have to specify the **x axis**, because a histogram assumes that you're counting rows of data and will map that to the y axis.
+:::
+
+## To Make Any Graph
+
+![](media/ggplot_anatomy.png){.two-thirds fig-align="center"}
+
+::: notes
+We just provided a high level of detail on the specific use case of working with the `covid_testing` data frame, but once you have the pattern in mind, you mostly have to think about three main tasks, shown here in blue. We'll explain each step in the following sections.
+:::
+
+## To Make Any Graph
+
+![](media/ggplot_anatomy_1.png){.two-thirds fig-align="center"}
+
+::: notes
+Step 1: Pick a **tidy data frame** (this contains the data you want to plot, organized in a tidy way) and add it to the first line, where we see ggplot(data = )
+:::
+
+## A Tidy Data Frame {.smaller}
+
+::: columns
+::: {.column width="60%"}
+![](media/tidy_data.png){.two-thirds fig-align="center"}
+:::
+
+::: {.column width="40%"}
+A data set is tidy if:
+
+-   Each variable is in its own column
+-   Each observation is in its own row
+-   Each value is in its own cell
+:::
+:::
+
+::: notes
+A data set can take on a lot of different shapes with different styles of organizing data. The one method or shape that is best suited for data analysis is known as "tidy".
+
+We won't cover "tidy" data in detail in this workshop. It's sufficient at this point to know that tidy data is in a rectangular shape with rows and columns, and:
+
+-   Columns each measure just one thing (so, no "doubling up" with first and last name in the same column, or race and gender in the same column) and
+-   Rows each constitute a single observation (like a single patient, or a single vial, or a single city block)
+-   Each value is in its own cell (again, no doubling up values or merging of cells)
+
+The sample data we're going to work with in this workshop, the `covid_testing` data, is already "tidy". So our first step is easy: we are going to choose the `covid_testing` data frame and put that as our tidy data frame.
+:::
+
+## To Make Any Graph:
+
+![](media/ggplot_anatomy_2.png){.two-thirds fig-align="center"}
+
+::: notes
+Step 2 is to pick a **geom function** (this is the type of plot you want to make), and add it as a new line (like we did with `geom_histogram`)
+:::
+
+## Geom Functions
+
+::: columns
+::: {.column width="10%"}
+![](media/geom_histogram_mini.png)
+:::
+
+::: {.column width="40%"}
+`geom_histogram()`
+:::
+
+::: {.column width="10%"}
+![](media/geom_dotplot_mini.png)
+:::
+
+::: {.column width="40%"}
+`geom_dotplot()`
+:::
+:::
+
+::: columns
+::: {.column width="10%"}
+![](media/geom_bar_mini.png)
+:::
+
+::: {.column width="40%"}
+`geom_bar()`
+:::
+
+::: {.column width="10%"}
+![](media/geom_boxplot_mini.png)
+:::
+
+::: {.column width="40%"}
+`geom_boxplot()`
+:::
+:::
+
+::: columns
+::: {.column width="10%"}
+![](media/geom_point_mini.png)
+:::
+
+::: {.column width="40%"}
+`geom_point()`
+:::
+
+::: {.column width="10%"}
+![](media/geom_line_mini.png)
+:::
+
+::: {.column width="40%"}
+`geom_line()`
+:::
+:::
+
+::: notes
+Here are a few useful geom functions for visualizing clinical data, but there are many more. With these six you can make histograms, bar plots, scatter plots, dot plots, boxplots, and line graphs.
+:::
+
+## To Make Any Graph:
+
+![](media/ggplot_anatomy.png){.two-thirds fig-align="center"}
+
+::: notes
+Let's take on the third step: writing aesthetic mappings. This is where you tell R how you want the columns of the data frame represented as graphical markings on the plot. It's important to start with a very important distinction between aesthetics in general and an aesthetic mapping, which is a kind of aesthetic.
+:::
+
+## Aesthetics
+
+![](media/aesthetics.png){.half fig-align="center"}
+
+::: notes
+-   An **aesthetic** is something that you can see about a data element on a graphic, such as its **position** on an x/y grid, but also other features such as for example its **color**.
+-   An **aesthetic mapping** is a rule that tells ggplot how to visualize the data using a **specific column of the data**. These are elements that would result in a different looking visualization if you were to change the data being provided. For example, the height of a bar changes depending on the data. Maybe you might show female patients as dots of one color and male patients as dots of another color. You're **mapping** patient sex to a visible characteristic, color.
+
+Of course, there are other visual elements of a data visualization that **wouldn't** automatically change if you change the data you provide. For instance, maybe we just like green and we want all the points on our graph to be green. We're not changing the color based on data, so it's not considered a mapping. When we're setting a fixed aesthetic that isn't affected by data, we don't put these assignments inside the aes parentheses.
+:::
+
+## Aesthetic Mappings
+
+![](media/abc_aesthetics.png){.half fig-align="center"}
+
+`aes(x = a, y = b, color = c)`
+
+::: notes
+Don't worry if mapping aesthetics versus setting fixed aesthetics seems a bit fuzzy at first -- it can be tricky to grapple with, and will become clearer over time as you gain more experience manipulating visualizations in R. Even advanced coders sometimes mess this up.
+
+Let's consider an example in a data frame with three columns, called "a", "b", and "c".\
+We can imagine mapping the values in column "a", which are numerical values, to the x axis. With column "b", also numerical, we can map those values to the y axis. And for column "c", which has categorical data with "M" and "F" values, we can imagine mapping that to colors.
+
+The mapping in ggplot would be within the aes parentheses, as you see on your screen.
+
+Note that R automatically figures out reasonable axis limits and a color scale, but you can fine tune this manually.
+:::
+
+## Your Turn #4 {.smaller background-color="#e3faf1"}
+
+![](media/aesthetics.png){.half fig-align="center"}
+
+In addition to x/y position and color, what other aesthetic **mappings** can you think of?
+
+(Hint: things that don't change to fit the data, like the background color of a graph, aren't **mappings**).
+
+Type your answers in the chat!
+
+::: notes
+Okay, time to fire up the chat window again. Type into chat some examples of other aesthetic **mappings**. Keep in mind that if something is set in a fixed way and it's the same regardless of the data, that's not a mapping.
+:::
+
+## Aesthetic Mappings
+
+![](media/aesthetic_mappings.png){.two-thirds .bordered fig-align="center"}
+
+::: tiny-text
+From [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/index.html), by Claus Wilke, licensed under CC-BY-NC-ND
+:::
+
+::: notes
+There are actually a lot of aesthetic mapping possibilities, and they depend on the kind of plot you're making. For example, for a line graph you can define line width and line type, and for scatter plots you can define the shape of the dots.
+
+Picking the best aesthetics for your graph is as much an art as it is a science. Claus Wilke's [*Fundamentals of Data Visualization*](https://serialmentor.com/dataviz) is a great introduction to this topic.
+:::
+
+## To Make Any Graph:
+
+![](media/ggplot_anatomy.png){.two-thirds fig-align="center"}
+
+::: notes
+So, to recap quickly, you can make any simple graph in ggplot by using this template, and replacing what's in blue here with your own values. You will:
+
+1)  pick a tidy data frame;
+2)  pick a geom function;
+3)  write aesthetic mappings.
+:::
+
+## Your Turn #5 {.smaller background-color="#e3faf1"}
+
+Open `02 - Visualize.Qmd`. Work through the exercises of the section titled "Your Turn 5".
+
+Stop when it says "Stop Here".
+
+Click "yes" ![](media/yes_button.png){.inline-image height="2em"} when you're done!
+
+```{r}
+countdown(minutes = 5, seconds = 0)
+```
+
+::: notes
+Alright, so we have another hands-on exercise here. Make sure you're in the folder called "exercises" and open the file called "02 - Visualize". Then follow the instructions. You have five minutes for this work. Have fun!
+
+\*\* Live Coding \*\*
+
+OK, so I'm going to do what you did. First I run this chunk to make sure I have the covid_testing data frame available to me. In my case, it was already in my environment, but it doesn't do any harm to run it again.
+
+This first exercise is pretty simple, I'm just filling in the blanks, so I'll add "covid_testing" in the first blank, "geom_histogram" in the second blank, and "pan_day" in the third.
+
+The second asks me to put in a bit more, so let's add "data = covid_testing" in my first blank, "geom_histogram" in the second blank, "x = pan_day" in the third blank and "1" in the final blank.
+
+Finally, I'm going to copy and paste, and add a second mapped aesthetic. You can have several mapped aesthetics that are separated by commas. So I add a comma after "x = pan_day" and add "fill = result".
+:::
+
+------------------------------------------------------------------------
+
+![](media/blue_histogram.png){fig-align="center"}
+
+```         
+ggplot(data = covid_testing) + 
+  geom_histogram(mapping = aes(x = pan_day), fill = "blue")
+```
+
+::: notes
+Consider this plot. It's the same as the one you've created at the beginning of the session, except the bars are filled in as blue, not black. So the difference is the "fill" aesthetic.
+
+But we're not really **mapping** the fill aesthetic to a variable here, like we just did in our hands-on coding, because all bars are the same fill color. They don't represent the values of a column (or variable) of a data frame. Instead, we're setting it to a constant value, the color blue.
+
+Do you notice how that looks different in the code?
+
+To do this in ggplot, you can still use "fill", but:
+
+-   Instead of setting it equal to a column / variable like "result", you'll set it to a color, like "blue".
+-   Instead of placing the "fill =" inside the aes parentheses, you'll put it outside the aes, as another argument you pass to geom_histogram.
+:::
+
+------------------------------------------------------------------------
+
+::: {.columns width="90%"}
+::: {.column .small-text width="50%"}
+![](media/multicolor_histogram.png)
+
+```         
+ggplot(data = covid_testing) + 
+  geom_histogram(mapping = aes(x = pan_day, 
+  fill = result))
+```
+
+[**Notice what's inside the geom_histogram():**]{.small-text}
+
+```         
+mapping = aes(x = pan_day, fill = result)
+```
+
+[**Is "fill" inside or outside of mapping?**]{.small-text}
+:::
+
+::: {.column .small-text width="50%"}
+![](media/blue_histogram.png)
+
+```         
+ggplot(data = covid_testing) + 
+  geom_histogram(mapping = aes(x = pan_day), 
+  fill = "blue")
+```
+
+[**Notice what's inside the geom_histogram:**]{.small-text}
+
+```         
+mapping = aes(x = pan_day), fill = "blue"
+```
+
+[**Is "fill" inside or outside of mapping?**]{.small-text}
+:::
+:::
+
+::: notes
+Let's compare aesthetic mappings, which are placed inside the aes function parentheses, and fixed aesthetics, which are placed outside the aes function parenthesis but inside the geom function parentheses.
+
+On the left we see an aesthetic mapping, where the test result is mapped to color, and on the right we see a fixed aesthetic that uses a specific color for a uniform fill.
+
+As an aside, because of space constraints, I hit enter partway through my geom_histogram layer and started a new line. That's totally okay in R code.
+:::
+
+## Geom Functions {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+We've briefly looked at geom\_ functions earlier and you might now appreciate how that makes it so easy to switch out one type of graph for another. But let's dive a bit deeper into the concept of geom functions.
+:::
+
+------------------------------------------------------------------------
+
+::: columns
+::: {.column width="50%"}
+![](media/mini_histogram.png)
+:::
+
+::: {.column width="50%"}
+![](media/mini_freqpoly.png)
+:::
+:::
+
+::: notes
+Consider: how are these two plots similar? How are they different?
+
+These two graphs share the same data, plotted on the same x and y axes. What's different? What's different is that on the left, the data is shown as a histogram, and on the right, it's shown as what's called a frequency polygon. Histograms and Frequency Polygons are two examples of geoms, or geom functions.
+
+A geom function is a function that, given the data and aesthetic mappings, generates the **geometric object** used to represent the data.
+
+In the next exercise, you're going to work hands-on with geom functions.
+:::
+
+## Your Turn #6 {.smaller background-color="#e3faf1"}
+
+Return to `02 - Visualize.qmd`. Work through the exercises of the section titled "Your Turn 6."
+
+Click "yes" ![](media/yes_button.png){.inline-image height="2em"} when you're done!
+
+```{r}
+countdown(minutes = 5)
+```
+
+::: notes
+Alright, so you're going to go back into that same file we were working with earlier, and you're going to do the second portion of the file. Go ahead and go into your exercises folder and open "02-Visualize." Follow the instructions, and if you get done early, there's a bonus section for you which is entirely optional.
+
+**Live Coding**
+
+You had three tasks to complete. We'll go through them one at a time.
+
+Your first task invited you to run a code chunk that creates a histogram and use that code as the basis of a new code chunk that creates a frequency polygon. To do that, I will copy-paste and try typing geom_fre... and discover the geom_freqpoly. Run that, and yep, that's the right code!
+
+In your second task, you were asked to set the color of the line to "blue". Note that lines have "color" while shapes have "fill" (for the inside) as well as optional "color" (for the edges).
+
+I simply add color = "blue", outside the aes parentheses, since this is fixed.
+
+Finally, you were asked to predict what the output of ggplot code using two different geom functions would be:
+
+Run that code, and you should see something like this!
+:::
+
+## Recap {.smaller}
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/ggplot2_hex.png){width="80px" fig-align="center"}
+:::
+
+::: {.column .small-text width="75%"}
+**ggplot2** is a package that provides a grammar of graphics. You can create any type of plot using a simple template to which you provide:
+:::
+:::
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/tidy_data.png){width="200px" fig-align="center"}
+:::
+
+::: {.column .small-text width="75%"}
+A **tidy data frame**, in which each variable is in its own column, each observation is in its own row, each value is in its own cell;
+:::
+:::
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/mini_histogram.png){width="100px"} ![](media/mini_freqpoly.png){width="100px"}
+:::
+
+::: {.column .small-text width="75%"}
+A **geom function**, which tells R what kind of plot to make; and
+:::
+:::
+
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/aesthetics.png)
+:::
+
+::: {.column .small-text width="75%"}
+**Aesthetic mappings**, which tell R how to represent data as graphical markings on the plot.
+:::
+:::
+
+::: notes
+To recap, **ggplot2** is a package that provides a grammar of graphics. You can create any type of plot using a simple template to which you provide:
+
+A **tidy data frame**, in which each variable is in its own column, each observation is in its own row, each value is in its own cell; A **geom function**, which tells R what kind of plot to make; and **Aesthetic mappings**, which tell R how to represent data as graphical markings on the plot.
+:::
+
+## What Else? {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+
+::: notes
+Let's spend the next few minutes on an important conceptual distinction about how you can define aesthetics in your plot.
+:::
+
+## Saving Plots
+
+![](media/saving_images.png){.two-thirds fig-align="center"}
+
+::: notes
+To save a plot you've created in the console, you can go to the **Plots** pane on the bottom right of the RStudio window, click "Export", and select "Save as Image".
+
+To save a plot you've created by running some code inside an R Markdown file, you can **right-click** the plot and select "Save image as".
+:::
+
+## Position Adjustments
+
+::: columns
+::: {.column .small-text width="50%"}
+```         
+ggplot(covid_testing) +
+  geom_histogram(
+    mapping = aes(x = pan_day, fill = result),
+    position = position_dodge()
+  )
+```
+:::
+
+::: {.column .small-text width="50%"}
+![](media/position_dodge.png)
+:::
+:::
+
+::: notes
+We've only barely scratched the surface of what you can do with ggplots. For example, you can change how overlapping objects are arranged. For example, instead of a stacked histogram, you can request side-by-side bars.
+:::
+
+## Themes
+
+::: columns
+::: {.column .small-text width="50%"}
+```         
+ggplot(covid_testing) +
+  geom_histogram(
+    mapping = aes(x = pan_day, fill = result),
+    position = position_dodge()
+  ) +
+  theme_light()
+```
+:::
+
+::: {.column .small-text width="50%"}
+![](media/theme_light.png)
+:::
+:::
+
+::: notes
+You can use different themes which affect how non-data elements such as axes, gridlines, and background appear.
+:::
+
+## Scales
+
+::: columns
+::: {.column .small-text width="50%"}
+```         
+library(colorspace)
+
+cols <- c(
+  "invalid" = "grey80",
+  qualitative_hcl(2, palette = "dark3")
+)
+
+ggplot(covid_testing) +
+  geom_histogram(
+    mapping = aes(x = pan_day, fill = result),
+    position = position_dodge()
+  ) +
+  theme_light() +
+  scale_fill_manual(values = cols)
+```
+:::
+
+::: {.column .small-text width="50%"}
+![](media/color_scales.png)
+:::
+:::
+
+::: notes
+You can customize color scales. There are a number of libraries to help you pick color scales, including ones that are colorblind safe palettes.
+:::
+
+## Facets
+
+::: columns
+::: {.column .small-text width="50%"}
+```         
+ggplot(covid_testing) +
+  geom_histogram(
+    mapping = aes(x = pan_day, fill = result)
+  ) +
+  theme_light() +
+  scale_fill_manual(values = cols) +
+  facet_wrap(~demo_group)
+```
+:::
+
+::: {.column .small-text width="50%"}
+![](media/facets.png)<!-- style = "max-width:700px;" -->
+:::
+:::
+
+::: notes
+You can facet your plot. That means breaking it into sub-plots by another variable, for example, gender or location in the hospital.
+:::
+
+## Coordinate Systems
+
+::: columns
+::: {.column .small-text width="50%"}
+```         
+ggplot(covid_testing) + 
+  geom_histogram(
+    mapping = aes(x = pan_day, fill = result)
+  ) + 
+  theme_light() +
+  scale_fill_manual(values = cols) + 
+  facet_wrap(~demo_group) + 
+  coord_polar()
+```
+:::
+
+::: {.column .small-text width="50%"}
+![](media/coord_systems.png)
+:::
+:::
+
+::: notes
+You can also use polar coordinates or create geographic maps by changing your coordinate system.
+:::
+
+## Titles and Captions
+
+::: columns
+::: {.column .small-text width="50%"}
+```         
+ggplot(covid_testing) +
+    geom_histogram(
+        mapping = aes(x = pan_day, fill = result)
+    ) +
+    theme_light() +
+    facet_wrap(~demo_group) +
+    ggtitle(label = "COVID19 Test Volume",
+         subtitle = "Faceted by Demographic Group") +
+    xlab("Day of Pandemic") +
+    ylab("Number of Tests")
+```
+:::
+
+::: {.column .small-text width="50%"}
+![](media/titles_captions.png)
+:::
+:::
+
+::: notes
+And you can add titles, subtitles, or annotations, and change the axis labels or the appearance.
+:::
+
+------------------------------------------------------------------------
+
+```         
+ggplot(data = data_frame) +                     # Required
+  geom_function(mapping = aes(mappings)) +      # Required
+  theme_function +                              # Optional
+  scale_function +                              # Optional
+  facet_function +                              # Optional
+  coordinate_function +                         # Optional
+  ...
+```
+
+::: notes
+All of these elements, like position adjustments, themes, color scales, facets, coordinate systems, and text can be added to a ggplot command in the same way that we added a second geom layer -- by writing a plus sign followed by a theme function, a scale function, a facet function, etc.
+:::
+
+------------------------------------------------------------------------
+
+![](media/cheat_sheets.png){.two-thirds .bordered fig-align="center"}
+
+::: notes
+The ggplot Cheat Sheet is great to have on hand as you're exploring your data. It reviews the basic template for building any plot and also lists the most useful geom functions.
+
+To find official cheat sheets, go to the Help menu and choose "Cheat Sheets". There are many to choose from!
+:::
+
+------------------------------------------------------------------------
+
+![](media/fundamentals.png){width="40%" fig-align="center"}
+
+<https://clauswilke.com/dataviz/>
+
+::: notes
+If you'd like to learn more about which graphics are most effective in specific situations, we recommend taking a look at *Fundamentals of Data Visualizations* by Claus Wilke. This is a very readable and recent primer on data visualization and figure design, and it's [available for free!](https://clauswilke.com/dataviz/). Note that this is not a book about how to code in R. Rather, it explains visual communication of data insights in a way that will help you regardless of the language you use.
+:::
+
+------------------------------------------------------------------------
+
+![](media/survminer.png){.two-thirds .bordered fig-align="center"}
+
+::: notes
+The survminer package extends ggplot to make it straightforward to create publication-quality survival curves and risk tables.
+:::
+
+## A Grammar for Tables
+
+![](media/gt.png){.two-thirds fig-align="center"}
+
+::: notes
+The gt package provides a grammar create display tables, i.e. tables that you might want to show in a publication or on a summary report. The gtsummary package makes it trivial to generate publication-ready tables from a tidy data frame.
+:::
+
+## Next Up: Transform
+
+Our next topic is:
+
+[Part 3: Transform](https://example.com)
