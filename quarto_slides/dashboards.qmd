@@ -376,7 +376,7 @@ So this brings us to the end of the workshop! One of the most frequent questions
 :::
 
 ::: {.column width="50%"}
-Information on how to use these materials in your own computer: <https://example.com> 
+Information on how to use these materials in your own computer: <https://github.com/arcus/intro-to-r-for-clinical-data> 
 
 :::
 :::
@@ -443,5 +443,5 @@ If you do end up participating, we'd love to hear about it in the CHOPR slack!
 
 Thanks to all our helpers and to all of you!
 
-Again, all the materials you need are at <https://example.com>, including a link to these slides.
+Again, all the materials you need are at <https://github.com/arcus/intro-to-r-for-clinical-data>, including a link to these slides and the files we used to make the slides in Quarto!
 

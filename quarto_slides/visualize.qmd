@@ -811,4 +811,4 @@ The gt package provides a grammar create display tables, i.e. tables that you mi
 
 Our next topic is:
 
-[Part 3: Transform](https://example.com)
+[Part 3: Transform](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/transform)

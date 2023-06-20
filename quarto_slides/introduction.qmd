@@ -153,7 +153,7 @@ It's important to note that regardless of which version of RStudio that you use,
 
 ## Your Turn #1 {.smaller}
 
-Go to <https://example.com> in your browser.  If you're not already logged in, log in to Posit.cloud.
+Go to <https://posit.cloud/content/6121691> in your browser.  If you're not already logged in, log in to Posit.cloud.
 
 ![](media/save_copy.png){.bordered .one-third fig-align="center"}
 
@@ -826,4 +826,4 @@ So you can mix code chunks written in R with code chunks written in, say, SQL or
 
 Our next topic is:
 
-[Part 2: Visualize](https://example.com)
+[Part 2: Visualize](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/visualize)

@@ -15,8 +15,8 @@ Presented by: Arcus Education / Children's Hospital of Philadelphia (CHOP) R Use
 
 Slide decks (click on any title):
 
-* [Welcome](https://example.com)
-* [Part 1: Introduction](https://example.com)
-* [Part 2: Visualize](https://example.com)
-* [Part 3: Transform](https://example.com)
-* [Part 4: Dashboards](https://example.com)
+* [Welcome](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/welcome)
+* [Part 1: Introduction](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/introduction)
+* [Part 2: Visualize](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/visualize)
+* [Part 3: Transform](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/transform)
+* [Part 4: Dashboards](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/dashboards)

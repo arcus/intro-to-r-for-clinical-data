@@ -556,4 +556,4 @@ Beyond dplyr, there are a number of other [`tidyverse`](https://www.tidyverse.or
 
 Our next topic is:
 
-[Part 4: Dashboards](https://example.com)
+[Part 4: Dashboards](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/dashboards)
