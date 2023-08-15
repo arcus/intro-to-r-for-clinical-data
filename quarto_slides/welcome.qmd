@@ -22,8 +22,8 @@ library(countdown)
 
 -   We suggest using the Chrome web browser.
 -   **Important!!** If you haven't already, please sign up for a **free** account at <https://posit.cloud>. We will use this as our platform today. 
--   (optional) These **slides** are at <https://https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/>
--   (optional) The GitHub repo with **exercises and solutions** for this course as well as the slide deck source files in quarto is at <<https://github.com/arcus/intro-to-r-for-clinical-data>
+-   (optional) These **slides** are at <https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/>
+-   (optional) The GitHub repo with **exercises and solutions** for this course as well as the slide deck source files in quarto is at <https://github.com/arcus/intro-to-r-for-clinical-data>
 
 
 
@@ -49,17 +49,77 @@ Hello and welcome to Introduction to R for Clinical Data, presented by the Child
 
 ## Introducing your Presenters and TAs! {.smaller}
 
-Presenters and TAs: 
+::: {.columns .v-center-container}
+::: {.column width="33%"}
+![](media/wes.png)
+Wes Wilson, Presenter
+:::
+::: {.column width="33%"}
+![](media/stephan.jpg)
+Stephan Kadauke, Presenter and Author
+:::
+::: {.column width="33%"}
+![](media/dino_1.jpg)
+Kiley Yeaman, Presenter
+:::
+:::
 
-- Names go here!  Pics and bios too if desired.
+
+:::notes
+
+We have several great Presenters and Teaching Assistants, including the folks whose names you see here. We don't have time enough to go into the bios for all of our helpers here, but we want to thank all of them for their generosity of time.  Presenters and TAs, please introduce yourself when we go into breakout sessions and when you start your presentations!  We'll start with our first three presenters: me (Wes), Stephan, and Kiley.
+
+:::
+
+## Introducing your Presenters and TAs! {.smaller}
+
+::: {.columns .v-center-container}
+::: {.column width="33%"}
+![](media/dino_3.jpg)
+Aki DiSandro, Presenter
+:::
+::: {.column width="33%"}
+![](media/joy.png)
+Joy Payton, Presenter, Zoomologist, etc.
+:::
+::: {.column width="33%"}
+![](media/megha.jpg)
+Megha Lal, Teaching Assistant
+:::
+:::
+
 
 ::: notes
 
-We have several great Presenters and Teaching Assistants, including the folks whose names you see here. Our TA's will be helping learners out one on one, so if you're struggling, please reach out in chat and one of the TAs will help!
+Next, two more speakers, Aki and Joy, and our first TA, Megha.
 
-The main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.
+Our TA's will be helping learners out one on one, so if you're struggling, please reach out in chat and one of the TAs will help!
 
-We will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that's completely up to you. We won't record breakout sessions.
+:::
+
+## Introducing your Presenters and TAs! {.smaller}
+
+::: {.columns .v-center-container}
+::: {.column width="33%"}
+![](media/dino_4.jpg)
+Keith Baxelbaum, Teaching Assistant
+:::
+::: {.column width="33%"}
+![](media/dino_5.jpg)
+Mary Kate Kelly, Teaching Assistant
+:::
+::: {.column width="33%"}
+![](media/rich.png)
+Rich Hanna, Teaching Assistant
+:::
+:::
+
+
+::: notes
+
+And finally, three more TA's: Keith, Mary Kate, and Rich.
+
+Thanks, all of you!
 
 :::
 
@@ -73,6 +133,11 @@ Familiarize yourself with:
 -   Chat
 
 ::: notes
+
+The main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.
+
+We will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that's completely up to you. We won't record breakout sessions.
+
 This is the main Zoom window. On the bottom you should be able to see two buttons - Participants and Chat.
 
 Click on these buttons now to open the Participants and Chat windows, and place those windows somewhere you can see, if necessary by making your main Zoom window a little smaller.
