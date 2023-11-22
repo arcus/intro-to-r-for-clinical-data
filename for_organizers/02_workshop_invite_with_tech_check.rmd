@@ -42,9 +42,9 @@ Day of the workshop:
 
 - We will be using a [Posit.cloud](https://posit.cloud) server on the web. Please sign up for a [free Posit account](https://posit.cloud/plans/free) before the workshop.
 
--	Zoom login info is at the bottom of this message.
+-	Teams login info is at the bottom of this message.
 
--	Reminder: please have the latest versions of Google Chrome and Zoom (unless you prefer to connect to the Zoom meeting via your browser) downloaded and installed prior to the workshop.
+-	Reminder: please have the latest versions of Google Chrome and Microsoft Teams (unless you prefer to connect to the Teams meeting via your browser) downloaded and installed prior to the workshop.
  
 We look forward to seeing you! 
  
@@ -52,6 +52,6 @@ Best,
 
 `r params$contact_person`, on behalf of Arcus Education and the CHOP R User Group
 
-**Zoom login information:** 
+**Teams login information:** 
 
 
