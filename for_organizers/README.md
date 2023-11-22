@@ -39,7 +39,7 @@ In addition, you'll need to set up Teams meetings for the tech check and worksho
 
 When setting up the meeting for the workshop, ensure that [attendance reports are turned **on**](https://support.microsoft.com/en-gb/office/manage-meeting-attendance-reports-in-microsoft-teams-ae7cf170-530c-47d3-84c1-3aedac74d310#ID0EDBD=Desktop). In order to see these options, you'll need to be scheduling the meeting via the Teams app, rather than through Outlook calendar. 
 
-### Save chat record during meeting
+### Save chat record immediately after meeting
 
 Right after the Teams call for the workshop ends, save the chat record. You'll need this to update the post-workshop email. Since CHOP has a policy of only keeping meeting chats for a short period of time, you'll want this to ensure you're covered.
 
