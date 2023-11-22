@@ -22,7 +22,7 @@ Before the workshop, please do the following.
 **Highly Recommended**:
 
 * Install or update the [Google Chrome browser](https://www.google.com/chrome/) on the computer you'll use.  We highly recommend you use Chrome to access our workshop training environment.
-* Download and install the latest version of [Zoom](https://zoom.us/download) (you may also choose to join in a browser).
+* Download and install the latest version of [Teams](https://www.microsoft.com/en-us/microsoft-teams/download-app) (you may also choose to join in a browser).
 * To help us better understand our learners, please complete the [pre-course survey](https://redcap.link/pre_r_for_clinical_data). We appreciate it!
 * Consider installing [R](https://cloud.r-project.org/) and [RStudio Desktop](https://rstudio.com/products/rstudio/download/) on your computer, so you can hit the ground running after the workshop finishes!
 * If you haven't already, and you're a CHOP or Penn employee, please consider [joining CHOP's R User Group](http://bit.ly/chopRusers).
@@ -79,4 +79,4 @@ Much of the material here owes its existence to Stephan Kadauke, MD, PhD, with i
 * Meredith Lee
 * Joy Payton, MS
 
-We are also indebted to the dozens of people who have served as presenters, Zoomologists, TAs, and to the hundreds who have been our students.  Without you, this workshop would not exist.
+We are also indebted to the dozens of people who have served as presenters, behind-the-scenes coordinators, TAs, and to the hundreds who have been our students.  Without you, this workshop would not exist.

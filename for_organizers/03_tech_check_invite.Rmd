@@ -25,11 +25,11 @@ Hello all,
 Intro to R for Clinical Data is coming up soon, and we're looking forward to seeing you all there! You should have already received a calendar invite for the workshop itself, along with information about pre-work. If you haven't received the workshop information, please let us know!
   
  
-On `r format(tech_check_date, '%A, %B %d')` `r print_time(tech_check_date, include_min=TRUE)`-`r print_time(tech_check_date + dminutes(30), include_min=TRUE)`, we will be holding a brief technology check-in to make sure that everyone is able to log into Zoom, the RStudio training environment, etc. 
+On `r format(tech_check_date, '%A, %B %d')` `r print_time(tech_check_date, include_min=TRUE)`-`r print_time(tech_check_date + dminutes(30), include_min=TRUE)`, we will be holding a brief technology check-in to make sure that everyone is able to log into Teams, the Posit Cloud training environment, etc. 
  
 Though this event is optional, please plan to attend for at least a few minutes if possible. This will allow us to hit the ground running on our workshop date, `r format(workshop_date, '%A, %B %d')`. 
  
-The information to join the Zoom meeting is at the bottom of this email. 
+The information to join the Teams meeting is at the bottom of this email. 
  
 Please reach out with any questions you might have! 
  
@@ -37,6 +37,6 @@ All the best,
 
 `r params$contact_person`, on behalf of Arcus Education and the CHOP R User Group 
 
-**Zoom login information:** 
+**Teams login information:** 
 
 
