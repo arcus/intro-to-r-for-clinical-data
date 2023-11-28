@@ -159,7 +159,7 @@ Go to <https://posit.cloud/content/6121691> in your browser.  If you're not alre
 
 Please click on "Save a Permanent Copy".
 
-Click "yes" (![](media/yes_button.png){.inline-image height="2em"}) once you see something like the image below.
+Click "thumbs up" once you see something like the image below.
 
 ![](media/posit_cloud_example.png){.half .bordered fig-align="center"}
 
@@ -170,7 +170,7 @@ countdown(minutes = 1, seconds = 0)
 ::: notes
 Now it’s your turn to get logged into Posit.cloud and make a copy of the project for yourself, that you can change and save and work with on your own account.
 
-Please click the yes (![](media/yes_button.png){.inline-image height="1em"}) button in zoom to let us know you logged in successfully.
+Please click the thumbs up button in Teams to let us know you logged in successfully.
 
 We will do our best to get everyone logged in.  If you are struggling to log in, please reach out in the chat and we will try to help you.
 
@@ -634,7 +634,7 @@ In the Files pane, click on the folder `exercises`.
 
 Open the file titled `01 – Introduction.qmd`. Instructions for this exercise are in the text of the document.
 
-Click yes (![](media/yes_button.png){.inline-image height="2em"}) when you are done.
+Click the thumbs up button in Teams when you are done.
 
 ```{r}
 countdown(minutes = 5, seconds = 0)
@@ -643,7 +643,7 @@ countdown(minutes = 5, seconds = 0)
 ::: notes
 Once again, I want you to go into Posit.cloud, and this time you'll work with an existing file we've placed in the server for your use. You'll go into the folder called "exercises" and fine the first assignment, called "Introduction". Go ahead and open that, and read the rest of the instructions there.
 
-We'll give you five minutes for this, and when you're done, click the "yes" button so we know how folks are doing.
+We'll give you five minutes for this, and when you're done, click the "thumbs up" button so we know how folks are doing.
 
 **After the timer finishes, do the exercise live so they can see what it looks like...**
 

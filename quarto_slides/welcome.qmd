@@ -80,7 +80,7 @@ Aki DiSandro, Presenter
 :::
 ::: {.column width="33%"}
 ![](media/joy.png)
-Joy Payton, Presenter, Zoomologist, etc.
+Joy Payton, Presenter, Teams-ologist, etc.
 :::
 ::: {.column width="33%"}
 ![](media/megha.jpg)
@@ -125,11 +125,11 @@ Thanks, all of you!
 
 ------------------------------------------------------------------------
 
-![](media/main_zoom_window.png){.bordered fig-align="center"}
+![](media/main_teams_window.png){.bordered fig-align="center"}
 
 Familiarize yourself with:
 
--   Participants
+-   People
 -   Chat
 
 ::: notes
@@ -138,19 +138,19 @@ The main part of the workshop will be webinar style, with everyone in one big se
 
 We will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that's completely up to you. We won't record breakout sessions.
 
-This is the main Zoom window. On the bottom you should be able to see two buttons - Participants and Chat.
+This is the main Teams window. Across the top you should be able to see several buttons, including People and Chat.
 
-Click on these buttons now to open the Participants and Chat windows, and place those windows somewhere you can see, if necessary by making your main Zoom window a little smaller.
+Click on Chat to open the Chat window, and consider opening the People window, too. Opening the People window means you'll see and place those windows somewhere you can see, if necessary by making your main Teams window a little smaller.
 :::
 
 ## Non-Verbal Feedback
 
-The "Yes, go ahead" feedback with the check mark is important today!
+The "Thumbs up" or "Like" feedback with the check mark is important today!
 
-![](media/feedback.png){.half .centered fig-align="center"}
+![](media/thumbs_up.png){.half .centered fig-align="center"}
 
 ::: notes
-We will make heavy use of the Non-verbal Feedback functionality of Zoom. At various points, we presenters will ask you to click "Yes" to let us know we can keep going. What I mean by that is to click the green circle with the check mark in the Participants window. Go ahead and find that "Reactions" section of your Zoom screen now. We'll ask you to use it in just a few moments.
+We will make heavy use of the Non-verbal Feedback functionality of Teams At various points, we presenters will ask you to click "Thumbs Up" to let us know we can keep going. What I mean by that is to click the Thumbs Up icon in the "React" section at the top of the Teams window. Go ahead and find that "React" section of your screen now. We'll ask you to use it in just a few moments.
 :::
 
 ## Chat Window
@@ -173,14 +173,14 @@ Please note that when I'm presenting, I can't also monitor the chat at the same 
 
 ## Your Turn #1 {background-color="#e3faf1"}
 
-Click the "yes" button (![](media/yes_button.png){.inline-image height="1em"}) in the Participants window. Then tell us where you work or what brought you here in the Chat window.  If you haven't already, also please create an account at https://posit.cloud, or be ready to create a project in your own RStudio from our GitHub repo
+Click the "thumbs up" in the React menu. Then tell us where you work or what brought you here in the Chat window.  If you haven't already, also please create an account at https://posit.cloud, or be ready to create a project in your own RStudio from our GitHub repo
 
 ```{r}
 countdown(minutes = 1, seconds = 00)
 ```
 
 ::: notes
-This brings us to the first interactive exercise! In the "Reactions" section of Zoom, please click on the "yes" button (![](media/yes_button.png){.inline-image height="1em"}). When you do this, it tells us as presenters that you're there, you're listening, and you're ready to continue.
+This brings us to the first interactive exercise! In the "React" section of Teams at the top of the screen, please click on the "thumbs up" button. When you do this, it tells us as presenters that you're there, you're listening, and you're ready to continue.
 
 Also, please tell us who you are! In the chat window, please tell us where you work or what brought you to this workshop.  And if you haven't already, please take this moment to sign up for a free account at <https://posit.cloud>.
 

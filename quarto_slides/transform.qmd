@@ -458,7 +458,7 @@ If, on the other hand, you wanted to change an **existing** column using `mutate
 
 Open `03 – Transform.qmd` and work through the exercises.
 
-Click "yes" ![](media/yes_button.png){.inline-image height="2em"} when you are finished.
+Click "thumbs up" when you are finished.
 
 ```{r}
 countdown(minutes = 5)

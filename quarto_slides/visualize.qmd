@@ -56,7 +56,7 @@ So now I'm going to ask you to imagine what the following plot would look like.
 
 So just take a few seconds and try to visualize this graph in your mind or doodle it on a piece of paper in front of you.
 
-Everybody have an idea? Click "yes" ![](media/yes_button.png){.inline-image height="2em"} to let me know to go on!
+Everybody have an idea? Click "thumbs up" to let me know to go on!
 :::
 
 ## Your Turn #2 {.smaller background-color="#e3faf1"}
@@ -393,7 +393,7 @@ Open `02 - Visualize.Qmd`. Work through the exercises of the section titled "You
 
 Stop when it says "Stop Here".
 
-Click "yes" ![](media/yes_button.png){.inline-image height="2em"} when you're done!
+Click "thumbs up" when you're done!
 
 ```{r}
 countdown(minutes = 5, seconds = 0)
@@ -515,7 +515,7 @@ In the next exercise, you're going to work hands-on with geom functions.
 
 Return to `02 - Visualize.qmd`. Work through the exercises of the section titled "Your Turn 6."
 
-Click "yes" ![](media/yes_button.png){.inline-image height="2em"} when you're done!
+Click "thumbs up" when you're done!
 
 ```{r}
 countdown(minutes = 5)
