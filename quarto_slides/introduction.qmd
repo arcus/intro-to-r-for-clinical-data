@@ -157,7 +157,7 @@ Go to <https://posit.cloud/content/6121691> in your browser.  If you're not alre
 
 ![](media/save_copy.png){.bordered .one-third fig-align="center"}
 
-Please click on "Save a Permanent Copy".
+**Please click on "Save a Permanent Copy".**  If you don't do this, you could "fill up" our seats on the shared copy, and prevent other people from participating!
 
 Click "thumbs up" once you see something like the image below.
 
@@ -168,14 +168,13 @@ countdown(minutes = 1, seconds = 0)
 ```
 
 ::: notes
-Now it’s your turn to get logged into Posit.cloud and make a copy of the project for yourself, that you can change and save and work with on your own account.
+Now it’s your turn to get logged into Posit.cloud and make a copy of the project for yourself, that you can change and save and work with on your own account.  **Please listen closely** to the instruction for this slide, because if you don't follow these instructions, you might accidentally prevent other people from participating today.  You **must** click the "Save a Permanent Copy", which will make a version of this project in **your** account.  If you don't do that, you'll be working in our account, and we can only have a few dozen people at a time in our account, so you'll be blocking others from participating.
 
-Please click the thumbs up button in Teams to let us know you logged in successfully.
+Please click the thumbs up button in Teams to let us know you logged in successfully AND saved a Permanent Copy of the project.
 
 We will do our best to get everyone logged in.  If you are struggling to log in, please reach out in the chat and we will try to help you.
 
 In a course this size, we may not be able to get every participant logged in successfully.  If you can’t access the cloud, please reach out via the chat so we can connect you with a TA.  If we aren’t able to help with your specific issue, don’t worry, follow along via the slides, the course will still be valuable for you.  
-
 
 :::
 
@@ -448,9 +447,13 @@ countdown(minutes = 3, seconds = 0)
 ::: notes
 It's your turn again.
 
-Follow the instructions in Your Turn #2 to - create a new R Markdown document - run all of the code chunks - knit the document
+Follow the instructions in Your Turn #2 to:
 
-When you knit the document, it will ask you for a filename to save to -- just enter "test"
+* create a new R Markdown document
+* run all of the code chunks, and 
+* knit the document
+
+When you knit the document, it will ask you for a filename to save to -- just enter "test" as the filename!
 
 We will meet back in 3 minutes to review this exercise together.
 
@@ -479,6 +482,9 @@ Now that we are familiar with how to create Quarto documents we can begin the pr
 The first step in the data analysis pipeline is to bring in, or **import**, the data to your environment, which for the purposes of this workshop is R.
 
 In this workshop, we'll work with a fabricated (completely made up) data set consisting of COVID-19 laboratory test results from a hypothetical infectious disease diagnostics lab. This data is stored as a **CSV file**.
+
+One very important thing to note is that you will need to install R packages into your copy of this project.  At first we really wanted to have all your packages pre-loaded, but now we see the wisdom of teaching you how to install and load packages right away.  It may take a few more minutes of our time today, but this is a crucial skill that you definitely need to develop.  We'll make sure to slow down and ensure that you get the packages installed that you need in order to do this work!
+
 :::
 
 ## CSV

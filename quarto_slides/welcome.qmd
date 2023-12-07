@@ -75,23 +75,23 @@ We have several great Presenters and Teaching Assistants, including the folks wh
 
 ::: {.columns .v-center-container}
 ::: {.column width="33%"}
-![](media/dino_3.jpg)
-Aki DiSandro, Presenter
-:::
-::: {.column width="33%"}
-![](media/joy.png)
-Joy Payton, Presenter, Teams-ologist, etc.
-:::
-::: {.column width="33%"}
 ![](media/megha.jpg)
-Megha Lal, Teaching Assistant
+Megha Lal, Presenter
+:::
+::: {.column width="33%"}
+![](media/alexis.png)
+Alexis Zavez, Teaching Assistant
+:::
+::: {.column width="33%"}
+![](media/nick.jpg)
+Nick Brown, Teaching Assistant
 :::
 :::
 
 
 ::: notes
 
-Next, two more speakers, Aki and Joy, and our first TA, Megha.
+Next, another speaker, Megha, and our first TAs, Alexis and Nick.
 
 Our TA's will be helping learners out one on one, so if you're struggling, please reach out in chat and one of the TAs will help!
 
@@ -105,8 +105,8 @@ Our TA's will be helping learners out one on one, so if you're struggling, pleas
 Keith Baxelbaum, Teaching Assistant
 :::
 ::: {.column width="33%"}
-![](media/dino_5.jpg)
-Mary Kate Kelly, Teaching Assistant
+![](media/dino_3.jpg)
+Melissa Rosahl, Teaching Assistant
 :::
 ::: {.column width="33%"}
 ![](media/rich.png)
@@ -119,9 +119,10 @@ Rich Hanna, Teaching Assistant
 
 And finally, three more TA's: Keith, Mary Kate, and Rich.
 
-Thanks, all of you!
+Thanks, all of you!  Not pictured is Joy, who is our organizer -- thanks, Joy, for your behind-the-scenes efforts!
 
 :::
+
 
 ------------------------------------------------------------------------
 
@@ -134,9 +135,9 @@ Familiarize yourself with:
 
 ::: notes
 
-The main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.
+The main part of the workshop will be webinar style, with everyone in one big session, and participants will be muted and cameras off. We are recording the main session for replay.  One important thing we want to note is that in previous instances of this workshop, we used Zoom.  This is our first time using Teams, so please be patient if things are a little clumsy sometimes. We're unhappy with the data privacy policies at Zoom, so we're going to give Teams a chance. 
 
-We will have one or two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that's completely up to you. We won't record breakout sessions.
+We will have one, possibly two breakout sessions. For the breakouts, we encourage you to participate by turning on your microphone. We also encourage you to turn on your camera, if you are comfortable, but that's completely up to you. We won't record breakout sessions.
 
 This is the main Teams window. Across the top you should be able to see several buttons, including People and Chat.
 
@@ -264,11 +265,11 @@ We also want people to feel that they can be themselves, especially in breakout 
 Meet and greet! We will send you into breakout rooms, where you will have a few minutes to meet one of our TAs and some of your fellow participants.
 
 ::: notes
-This brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.
+This brings us to our first breakout session! When the invitation appears to join a breakout room, please go ahead and join.  We'd like you to share what brought you here and how you're feeling about learning R -- are you excited?  Apprehensive? Confused?
 
 For this exercise, we encourage you to turn on your microphone and camera, if you're comfortable.
 
-At the 10 [or less, make a judgment call] min mark, we'll bring everyone back into the main session.  Depending on how many participants we have, there may be a lot of you in each break room, so we folks to be mindful of time when you introduce yourself and why you're in this session.
+After about 10 minutes, we'll bring everyone back into the main session.  Depending on how many participants we have, there may be a lot of you in each break room, so we ask folks to be mindful of time when you introduce yourself and why you're in this session.
 :::
 
 ## Next Up: Introduction
