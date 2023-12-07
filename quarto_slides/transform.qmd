@@ -140,9 +140,9 @@ countdown(minutes=1)
 ```
 
 ::: notes
-Great, we have some folks saying , others are suggesting . The answer is B.
+Great, we have some folks saying [whatever], others are suggesting [whatever]. The answer is B.
 
-A isn't correct because the arguments are in the wrong order. The first argument in the tidyverse functions we're studying today is always going to be the data frame you want to work with. That means the first argument should be covid_testing.
+A isn't correct, because the arguments are in the wrong order. The first argument in the tidyverse functions we're studying today is always going to be the data frame you want to work with. That means the first argument should be covid_testing.
 
 C isn't correct because you have to use the assignment arrow to save the new, one-column-only data frame to an object called newdata. You don't pass the name you want to apply to the object as an argument.
 
@@ -456,7 +456,7 @@ If, on the other hand, you wanted to change an **existing** column using `mutate
 
 ## Your Turn #5 {.smaller background-color="#e3faf1"}
 
-Open `03 – Transform.qmd` and work through the exercises.
+Open `03 – Transform.qmd` and work through the exercises for the section that says "Your Turn #5."
 
 Click "thumbs up" when you are finished.
 
@@ -465,15 +465,71 @@ countdown(minutes = 5)
 ```
 
 ::: notes
-Now let's do some hands-on work. Please go to your "exercises" folder and open the 03 transform file. You'll have five minutes to go through the instructions in that file!
+Now let's do some hands-on work. Please go to your "exercises" folder and open the 03 transform file. You'll have five minutes to go through the first part of that file.  There's a place where it says "stop here...", so please do!
 
 ...
 
-Everyone ready? I'm going to go through the solutions very quickly. In this first exercise, I'll start with covid_testing, then add a pipe, and then use my filter, making sure I use the double equal. So clinic_name == "picu". Finally, I'll add another pipe and then keep only the columns I care about, using select(rec_ver_tat, pan_day).
+Everyone ready? I'm going to go through the solutions. In this first exercise, I'll start with covid_testing, then add a pipe, and then use my filter, making sure I use the double equal. So clinic_name == "picu". Finally, I'll add another pipe and then keep only the columns I care about, using select(rec_ver_tat, pan_day).
 
 Then I'll use mutate without a pipe and make a new column composed of the sum of two existing columns. I'll do it like this: mutate covid_testing comma total_tat equals col_rec_tat plus rec_ver_tat.
 
 And finally, I'll take the data frame name out of that mutate and use it as the start of a pipeline. So I have covid_testing, then, mutate, total_tat equals col_rec_tat plus rec_ver_tat.
+:::
+
+## Additional Practice
+
+Depending on how we're doing for time, there's a "bonus section" here that we may have time to do!  If time permits:
+
+Open `03 – Transform.qmd` and work through the exercises for the section that says "Your Turn #6.  We'll do this together!
+
+
+::: notes
+Say one of these, depending on your time frame:
+
+This is an optional exercise, and I think we have time to do it!
+
+OR
+
+We don't have time to do this optional exercise right now, but you have access to your project and these slides, and this might be fun for you to do in your own time later). 
+
+Please go to your "exercises" folder and open the 03 transform file. Give me that thumbs up when you're in that file, and you are looking at the section called "Your Turn 6."  We haven't had a chance to talk about group by and aggregation yet, so this is a section of code we'll work on together.
+
+Everyone ready? 
+
+Great, let's begin by reading the instructions, which tell us we want to compare different clinics.
+
+> You are interested in understanding the relative utilization of COVID tests and the range of turnaround times across locations, which are captured with the clinic_name variable. Use group_by and summarize to calculate:
+
+> a\) The number of orders ordered by each clinic/unit, creating a new summary variable num_orders
+
+> b\) The median total turnaround time for each clinic/unit (using the total_tat variable you created in the previous exercise), using a new summary variable median_tat.
+
+We're also given a hint in the exercise file.  It tells us, "The function to calculate a median is (predictably) median(...)."
+
+Let's start by adding our starting data frame.  What's the name of our starting data frame again?  The one with all the data in it?  That's right, covid\_testing.  I'm adding that to the first line of this chunk.
+
+And we want to do something here called group\_by.  Group by is a way for us to lump cases together and then get a statistic for each group.  For example, maybe you want the median blood sugar for girls and the median blood sugar for boys in your study, or the maximum wait time for King of Prussia emergency department patients and the maximum wait time for University City emergency department patients.
+
+When you use group by, you need to tell R what you're grouping by.  Here, we want to get a statistic for each clinic, so we'll add `group_by(clinic_name)` in the second part of this pipeline.
+
+Once you have your data segmented into groups, you want to summarize each group.  Summarizing can take lots of different forms!  Sometimes you want to know how big the group is, how many members it has.  Sometimes you want to know what the average value of something is per group, or what the maximum value is.
+
+What were we asked to do? Let's look at letter (a) again.  We were asked to find the number of orders ordered by each clinic/unit, creating a new summary variable `num_orders`.
+
+We'll want to put some kind of function here that counts the number of members in each group.  In R, a very easy way to do this is to use the `n` function.  Here I'm just going to put n, followed by an open and closed parenthesis.
+
+But we were also asked to get a second summarizing variable for each group.  What was that?  Well, in letter (b) we read that we're asked to calculate median total turnaround time for each clinic/unit (using the total_tat variable you created in the previous exercise), using a new summary variable median_tat.
+
+We were also told that we could use the function `median()` to calculate a median value. So how do you think we can calculate the median total TAT for each group?  Type into chat if you think you know!
+
+...
+
+That's right!  We're going to add `median(total_tat)` as the value of our new variable, `median_tat`.
+
+Now let's run this chunk and see if I typed everything correctly!  Great!  Now we have values by groups, and we set the grouping to be each clinic having its own group.
+
+Group by and aggregation functions together do a great job of helping you characterize your data and notice groupwise differences, whether that's by location, sex, race, disease status, or some other category!
+
 :::
 
 ## Recap {.smaller}
@@ -533,7 +589,7 @@ Additionally, `dplyr` and other `tidyverse` packages make use of the pipe operat
 ![](media/dplyr_cheatsheet_snapshot.png){.two-thirds .bordered fig-align="center"}
 
 ::: notes
-RStudio creates and distributes a number of cheatsheets for various purposes. You can find them by clicking in the **Help menu** in RStudio -- try that now! Here's an image of the `dplyr` cheatsheet. As you can see, there are lots of other funtions that dplyr offers.
+RStudio creates and distributes a number of cheatsheets for various purposes. You can find them by clicking in the **Help menu** in RStudio -- try that now! Here's an image of the `dplyr` cheatsheet. As you can see, there are lots of other functions that dplyr offers.
 
 Other `dplyr` functions include `arrange()`, `distinct()`, `group_by()` (which is especially helpful when combined with `summarize()`), and many more!
 :::
@@ -552,8 +608,15 @@ Beyond dplyr, there are a number of other [`tidyverse`](https://www.tidyverse.or
 -   `dbplyr` allows you to interact with a table inside a database as if it were a data frame
 :::
 
-## Next Up: Dashboards
+## Next Up: Final Notes
 
-Our next topic is:
+If you want to look at Dashboards, a section we have decided to cut for time, you can find that here: [Dashboards](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/dashboards).
 
-[Part 4: Dashboards](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/dashboards)
+But we'll be moving on to [Final Notes](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/final_notes).
+
+::: notes
+
+We've given this workshop a few times, and we think that it makes sense to have a relaxed pace that teaches you slowly.  We've decided not to teach the fourth set of slides, the one on Dashboards, this time around.  But the material is there for you if you want to look at it and practice with it!  You can even look at the speaker notes from when we've taught this previously.
+
+Instead, we're going to jump right to our final notes.  Joy will close things out for us today with some next steps for growing in R!
+:::

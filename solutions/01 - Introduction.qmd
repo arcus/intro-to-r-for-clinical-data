@@ -12,7 +12,14 @@ Recall that to import CSV files, we use the *read_csv()* function, which is part
 
 In the following code chunk, we first load the *tidyverse* package and then use the *read_csv()* function to load the *covid_testing.csv* file and capture it in an object named *covid_testing*.
 
-Run the following code chunk.
+
+You can probably skip the cell just below this paragraph, because we tried to install tidyverse ahead of time.  However, we've occasionally noticed this fail to work when people make a copy of a project.  For now, you can skip it... and we've told RStudio to skip it by default as well, by using "eval=FALSE".
+
+```{r eval=FALSE}
+installed.packages("tidyverse")
+```
+
+Run the following code chunk.  If you get an error that says something like "there is no package called 'tidyverse'", that means that we failed to get tidyverse set up for you.  Run the code chunk above to get it installed, then keep going!
 
 ```{r, message = FALSE}
 library(tidyverse)
@@ -47,6 +54,6 @@ Important: this doesn't actually change the data in the `covid_testing` data fra
 
 4.  How many tests overall were positive? How many positive tests were there in the first 30 days of the pandemic? (Hint: look at the Filter button)
 
-The `result` column holds that information. We can apply a filter to that column to only show us rows where the value in the `result` column is "positive". Click on Filter and enter "positive" in the text field that appears below the `result` header. You will now see that the bottom line of the data viewer reads "Showing 1 to \[some number\] of 865 entries, 17 total columns (filtered from 15,524 total entries)". So there were 865 positive tests, out of 15,524 total.  We can apply an additional filter to the `pan_day` column to limit our data to the first 30 days.  Applying this filter we see that 137 positive tests in this time window.
+The `result` column holds that information. We can apply a filter to that column to only show us rows where the value in the `result` column is "positive". Click on Filter and enter "positive" in the text field that appears below the `result` header. You will now see that the bottom line of the data viewer reads "Showing 1 to \[some number\] of 865 entries, 17 total columns (filtered from 15,524 total entries)". So there were 865 positive tests, out of 15,524 total. We can apply an additional filter to the `pan_day` column to limit our data to the first 30 days. Applying this filter we see that 137 positive tests in this time window.
 
 When you are done, don't forget to click "yes" in the Participants window in Zoom!

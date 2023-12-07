@@ -362,86 +362,8 @@ A framework for developing interactive web applications in R: deploy in shinyapp
 Shiny allows you to build full blown web apps with a lot more functionality than a simple dashboard, using a web front end and back end to serve up dynamic content.  
 :::
 
-## What Next? {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
+## Next Up: Final Notes
 
-::: notes
-So this brings us to the end of the workshop! One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that.
-:::
+Our next topic is:
 
-## Access Your Own R and RStudio! {.smaller}
-
-::: columns
-::: {.column width="50%"}
-![](media/rstudio_desktop.png)
-:::
-
-::: {.column width="50%"}
-Information on how to use these materials in your own computer: <https://github.com/arcus/intro-to-r-for-clinical-data> 
-
-:::
-:::
-
-
-::: notes
-
-Also, if you'd like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them.
-:::
-
-------------------------------------------------------------------------
-
-::: {.columns .v-center-container}
-::: {.column .tiny-text width="33%"}
-![](media/r4ds.png){.half}
-
-<https://r4ds.had.co.nz>
-:::
-
-::: {.column .tiny-text width="33%"}
-![](media/r4ds_solutions.png){.half}
-
-<https://jrnold.github.io/r4ds-exercise-solutions/>
-:::
-
-::: {.column .tiny-text width="33%"}
-![](media/r4ds_hex.png){.two-thirds}
-
-<https://rfordatasci.org>
-:::
-:::
-
-::: notes
-I wanted to point out that "R For Data Science" by Garrett Grolemund and Hadley Wickham is the de-facto standard introduction to data science with R.
-
-This course is designed so that you can pick up this book and keep learning - we use the same packages and conventions as in that book. The entire text is available for free at this address. Each chapter has a lot of exercises,
-
-And there's a solutions manual for the exercises online, which makes this great for self-paced learning.
-
-There's also an amazing online community that was borne out of the book that has evolved into an incredibly vibrant and active slack community filled to the brim with resources and cheerful folks in all stages of their data science journey.
-:::
-
-------
-
-![](media/rmarkdown_definitive_guide.png)
-
-<https://bookdown.org/yihui/rmarkdown/>
-
-::: notes
-Our very own Rose Hartman is acknowledged in this great book, which will help you master the markdown used in Quarto and R Markdown.
-:::
-
-## Participate in Tidy Tuesday
-
-![](media/tidy_tuesday.png){.two-thirds fig-align="center"}
-
-::: notes
-The aforementioned R4DS community has an initiative known as "Tidy Tuesday" -- each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.
-
-If you do end up participating, we'd love to hear about it in the CHOPR slack!
-:::
-
-## Thank You! {.smaller}
-
-Thanks to all our helpers and to all of you!
-
-Again, all the materials you need are at <https://github.com/arcus/intro-to-r-for-clinical-data>, including a link to these slides and the files we used to make the slides in Quarto!
-
+[Final Notes](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/final)

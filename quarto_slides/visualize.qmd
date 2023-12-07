@@ -522,7 +522,7 @@ countdown(minutes = 5)
 ```
 
 ::: notes
-Alright, so you're going to go back into that same file we were working with earlier, and you're going to do the second portion of the file. Go ahead and go into your exercises folder and open "02-Visualize." Follow the instructions, and if you get done early, there's a bonus section for you which is entirely optional.
+Alright, so you're going to go back into that same file we were working with earlier, and you're going to do the second portion of the file. Go ahead and go into your exercises folder and open "02-Visualize." Follow the instructions for the section titled "Your Turn 6", and then we'll go through the exercise together.
 
 **Live Coding**
 

@@ -186,7 +186,7 @@ In a course this size, we may not be able to get every participant logged in suc
 ::: notes
 On the top left is the **Editor**. This is where you edit your files with code in them.  You might not see this pane just yet!
 
-On the bottom left is the **Console**. The console allows you to quickly run an individual R command, like for installing a package. We won't use the console very much in this course.
+On the bottom left is the **Console**. The console allows you to quickly run an individual R command that you don't need to record for reuse later, for example, installing a package. We won't use the console as much in this course.  
 
 On the top right is the **Environment** tab set. The environment (first and most frequently used tab in the set of tabs in this pane) allows you to look at the data that's loaded into R's memory. Interacting with data in the environment tab can be a little bit like working in Excel, and we'll look at that in an upcoming exercise.
 
@@ -457,6 +457,7 @@ When you knit the document, it will ask you for a filename to save to -- just en
 
 We will meet back in 3 minutes to review this exercise together.
 
+
 **Live Coding Section** (Switch to Posit and do the exercise)
 
 A few things to note as I go through this: the header starts with 3 dashes and ends with 3 dashes.
@@ -522,7 +523,11 @@ To import our CSV data, we need some additional data analysis tools. In this cou
 
 The Tidyverse is a set of tools that has become the de facto standard for doing data science with R.
 
-The basic tenets of "tidy" data analysis include: \* Data should be organized in a consistent, standardized way. Each row is an observation, and each column is a variable. This is a very common way to organize data in a spreadsheet and might sound familiar from how you may already organize data in tools like Excel. \* Programming code that acts on the data should be consistent, concise, and sound like human language as much as possible. \* Each data analysis can be broken down into a series of atomic steps, such as "select this column" or "arrange the data by the values in that column". An arbitrarily complex data analysis can be broken down as a pipeline of atomic steps.
+The basic tenets of "tidy" data analysis include: 
+
+* Data should be organized in a consistent, standardized way. Each row is an observation, and each column is a variable. This is a very common way to organize data in a spreadsheet and might sound familiar from how you may already organize data in tools like Excel. 
+* Programming code that acts on the data should be consistent, concise, and sound like human language as much as possible. 
+* Each data analysis can be broken down into a series of atomic steps, such as "select this column" or "arrange the data by the values in that column". An arbitrarily complex data analysis can be broken down as a pipeline of atomic steps.
 :::
 
 ## Installing and Loading Packages
@@ -541,8 +546,6 @@ The basic tenets of "tidy" data analysis include: \* Data should be organized in
 The **tidyverse** is package (a collection of functions, data, and help documentation) that we can use to extend the innate functionality of R, which is often referred to as "base R". In fact, tidyverse is special because it includes a suite of interrelated packages that work together to do a number of tasks related to importing, reshaping, visualizing, and analyzing data.
 
 You can download and **install** a package with the command `install.packages`. For example, to install the tidyverse package, you would go to the R Console and type `install.packages("tidyverse")`. Each package you want to use needs to be installed only once on each computer.
-
-In our Posit.cloud workspace, you won't need to install any packages for this course (as we have installed them for you). If you're using R on your own computer, however, **you will have to install packages**.
 
 Make sure you **include the quotes** around tidyverse. When to use quotes is a tricky topic that we will talk about more later in this workshop, but for now, keep in mind that you will *always* need to put quotes around the name of a package whenever using `install.packages()`.
 
@@ -649,6 +652,8 @@ countdown(minutes = 5, seconds = 0)
 ::: notes
 Once again, I want you to go into Posit.cloud, and this time you'll work with an existing file we've placed in the server for your use. You'll go into the folder called "exercises" and fine the first assignment, called "Introduction". Go ahead and open that, and read the rest of the instructions there.
 
+We've tried to install the tidyverse set of packages to the project you made a copy of, but our experience is that it doesn't always work when the project gets copied over -- you might have to use install.packages and install tidyverse.  If that happens, we apologize, but we know that using install.packages early will be good practice for you, so hopefully you'll forgive us if we don't have everything installed that you need!
+
 We'll give you five minutes for this, and when you're done, click the "thumbs up" button so we know how folks are doing.
 
 **After the timer finishes, do the exercise live so they can see what it looks like...**
@@ -657,7 +662,7 @@ I'm going to start by running this code chunk. I can go to the "Run" button at t
 
 When I'm coding, I like to break my code up into chunks of only a few lines of code at a time. That way, if I have to make a change, it's easy to just run the code I need to re-run, without re-running the whole thing.
 
-Now, did anything change when I ran this cell? Yes! In the environment pane, a new data object appeared. And I can interact with this object in several ways. I can click the triangle beside the object's name, or I can click on the object name itself.
+Now, did anything change when I ran this chunk that ingests data from a .csv? Yes! In the environment pane, a new data object appeared. And I can interact with this object in several ways. I can click the triangle beside the object's name, or I can click on the object name itself.
 
 So, let's answer the questions. How can I tell how many rows and columns there are? I can look beside the name of the object in my Environment pane and I see a number of observations, which are rows, and a number of variables, which are columns. I can also use the data view that opens up in my source pane here. At the very bottom there's a count of rows and columns. Did anyone else figure out the answer in a different way?
 

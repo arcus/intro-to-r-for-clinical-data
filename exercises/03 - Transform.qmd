@@ -38,7 +38,7 @@ covid_testing %>%
 	mutate(c_r_tat_mins = col_rec_tat*60)
 ```
 
-## Your Turn #1
+## Your Turn #5
 
 Use select, filter and %\>% in the following chunk to write a sequence of functions that:
 
@@ -62,7 +62,7 @@ View(________)
 
 **Stop Here**
 
-## Your Turn #2
+## Your Turn #6
 
 You are interested in understanding the relative utilization of COVID tests and the range of turnaround times across locations, which are captured with the clinic_name variable. Use group_by and summarize to calculate:
 

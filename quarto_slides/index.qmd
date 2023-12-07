@@ -12,13 +12,13 @@ format:
 
 Presented by: Arcus Education / Children's Hospital of Philadelphia (CHOP) R User Group
 
-
 Slide decks (click on any title):
 
-* [Welcome](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/welcome) 8:30-9:25
-* [Part 1: Introduction](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/introduction) 9:25 - 10:30
-* 15 min break
-* [Part 2: Visualize](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/visualize) 10:45-11:45
-* 45 min lunch break
-* [Part 3: Transform](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/transform) 12:30-1:30
 
+* [Welcome](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/welcome) 8:30-9:15
+* [Part 1: Introduction](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/introduction) 9:15 - 10:15
+* 15 min break
+* [Part 2: Visualize](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/visualize) 10:30-11:30
+* 45 min lunch break
+* [Part 3: Transform](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/transform) 12:15-1:15
+* [Part 4: Final Notes](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/dashboards) 1:15-1:30

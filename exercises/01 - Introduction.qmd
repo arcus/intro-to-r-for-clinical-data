@@ -12,7 +12,13 @@ Recall that to import CSV files, we use the *read_csv()* function, which is part
 
 In the following code chunk, we first load the *tidyverse* package and then use the *read_csv()* function to load the *covid_testing.csv* file and capture it in an object named *covid_testing*.
 
-Run the following code chunk.
+You can probably skip the cell just below this paragraph, because we tried to install tidyverse ahead of time. However, we've occasionally noticed this fail to work when people make a copy of a project. For now, you can skip it... and we've told RStudio to skip it by default as well, by using "eval=FALSE".
+
+```{r eval=FALSE}
+installed.packages("tidyverse")
+```
+
+Run the following code chunk. If you get an error that says something like "there is no package called 'tidyverse'", that means that we failed to get tidyverse set up for you. Run the code chunk above to get it installed, then keep going!
 
 ```{r, message = FALSE}
 library(tidyverse)
