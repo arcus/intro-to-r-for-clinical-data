@@ -493,15 +493,17 @@ A very common use case is to divide your data into groups, and get information a
 
 For this, we'll use `group_by` and `summarize`.
 
+![](media/group_by_summarise_mini.png){.half fig-align="center"}
+
 
 ::: notes
 Group by combined with summarize is a way for us to lump cases together and then get a statistic for each group.  For example, maybe you want the median blood sugar for girls and the median blood sugar for boys in your study, or the maximum wait time for King of Prussia emergency department patients and the maximum wait time for University City emergency department patients.
 
-When you use group by, you have to tell R how to separate your cases into groups.  Any variable that is categorical data can be used to group.  For example, you can group by sex, or race, or zip code.
+When you use group by, you have to tell R how to separate your cases into groups.  In the image here, there are three groups, each of which is represented by a different shade of gold. Any variable that is categorical data can be used to group.  For example, you can group by sex, or race, or zip code.  Maybe these three groups are three states, like New Jersey, Pennsylvania, and Delaware!
 
-Once you have your data in groups, you can then use the summarize command to get summary statistics for each group.  
+Once you have your data in groups, you can then use the summarize command to get summary statistics for each group.  The summary for each group is represented in blue in this small image.
 
-Summarizing can take lots of different forms!  Sometimes you want to know how big the group is, how many members it has.  Sometimes you want to know what the average value of something is per group, or what the maximum value is.  You can also summarize and give several different measures for each group, like maximum, minimum, mean, and median.
+Summarizing can take lots of different forms!  Sometimes you want to know how big the group is, how many members it has.  Sometimes you want to know what the average value of something is per group, or what the maximum value is.  You can also summarize and give several different measures for each group, like maximum, minimum, mean, and median.  It looks like in this image there are two values given for each group.  Maybe we have two values for New Jersey, Pennsylvania and Delaware, like the number of patients we have in each state and the number of patients in each state using Medicaid.
 :::
 
 ## Additional Practice (Time Permitting)
@@ -600,12 +602,24 @@ Use the pipe operator `%>%` to combine dplyr functions into a pipeline
 :::
 :::
 
+::: {.columns .centered width="80%"}
+::: {.column width="25%"}
+![](media/group_by_summarise_mini.png){.two-thirds fig-align="center"}
+:::
+
+::: {.column width="75%"}
+`group_by()` with `summarize()` gives per-group statistics 
+:::
+:::
+
 ::: notes
 To recap, `dplyr` is a package you can load in R that provides a grammar for transforming data frames. Some of the key `dplyr` functions are:
 
-`select()`, which subsets columns by name `filter()`, which subsets rows by a logical condition , and `mutate()`, which creates new calculated columns or changes existing columns
+`select()`, which subsets columns by name `filter()`, which subsets rows by a logical condition, and `mutate()`, which creates new calculated columns or changes existing columns
 
 Additionally, `dplyr` and other `tidyverse` packages make use of the pipe operator, which can be used to string together `dplyr` functions into a pipeline that performs several transformations.
+
+Finally, `group_by()` and `summarize()` work together to allow you to calculate per-group summary statistics.
 :::
 
 ## What Else? {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}

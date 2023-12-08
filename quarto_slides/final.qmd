@@ -20,12 +20,27 @@ library(countdown)
 
 ## Final Notes {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
 
+::: notes
+Well friends, we've reached the end of our time together today, and we want to share a few final notes with you.  We'll talk about next steps and express gratitude as we close the workshop.
+:::
+
 
 ## What Next? {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
 
 ::: notes
-So this brings us to the end of the workshop! One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that.
+One of the most frequent questions we get is what can I do to keep learning R after the workshop. We have a few suggestions for that.
 :::
+
+## Join the CHOP R User Group!
+
+CHOP has an active R User Group, with talks, workshops, and a Slack community where you can ask for help with code!  Join at <https://bit.ly/chopRusers>.
+
+::: notes
+CHOP has an active R User Group, which is also open to Penn and Drexel affiliated friends.  We have talks, workshops, and a Slack community where you can ask for help with code!  Join at https://bit.ly/chopRusers.  This is not a paid department of the hospital, it's a grassroots team of people like you who enjoy helping one another. Spread the word! 
+
+We currently have hundreds of members and we're hopeful that you, as new R users, will be enthusiastic participants in the group, whether that's sharing your successes, asking for help, or suggesting resources.  Importantly, if you found this workshop useful, you might want to be a teaching assistant or presenter next time, and we'd love to have you!  Information about this workshop comes out first on the R User Group, so if you want to get sneak preview details, you'll want to join CHOP's R User Group.
+:::
+
 
 ## Access Your Own R and RStudio! {.smaller}
 
@@ -35,47 +50,78 @@ So this brings us to the end of the workshop! One of the most frequent questions
 :::
 
 ::: {.column width="50%"}
-Information on how to use these materials in your own computer: <https://github.com/arcus/intro-to-r-for-clinical-data> 
-
+If you want, you (or CHOP IS) can install R and RStudio Desktop for free on your computer, following the instructions Posit offers at <https://posit.co/download/rstudio-desktop/>. 
 :::
 :::
 
 
 ::: notes
+If you want, you (or CHOP IS) can install R and RStudio Desktop for free on your computer, following the instructions Posit offers at <https://posit.co/download/rstudio-desktop/>.  You certainly don't want to upload hospital data to Posit.cloud, because there are important regulations about how we deal with our data at CHOP.  
 
-Also, if you'd like to practice with the materials of the course on your own computer, the course website has instructions on how you can download them.
+Also, if you'd like to practice with these materials from today's course on your own computer, the course website has instructions on how you can download them.
+:::
+
+
+## Publish Your Work at CHOP!
+
+If you have access to CHOP's Posit Connect instance (<https://rstudio-connect.chop.edu/connect/>), you may want to use that to do things like publish your work (assuming that's compliant!).
+
+
+::: notes
+If you have access to CHOP's Posit Connect instance (<https://rstudio-connect.chop.edu/connect/>), you may want to use that to do things like publish your work (assuming that's compliant!).  You can select who you share your rendered documents with, so you could just share a dashboard with your boss or make it so your whole team could see your work!  Just be aware that if you're working with private data including patient PHI or human subjects research data, you might want to be extra careful about sharing your work.
+:::
+
+
+## Do some tutorials with DART materials!
+
+
+::: {.columns .v-center-container}
+::: {.column .tiny-text width="50%"}
+<https://arcus.github.io/education_modules/list_of_modules> : Data and Analytics for Research Training (DART) materials, created by Arcus Data Education (Joy and her team!)
+:::
+::: {.column .tiny-text width="50%"}
+![](media/modules_sneak_peek.png)
+:::
+:::
+
+
+::: notes
+https://arcus.github.io/education_modules has a number of self-paced tutorials written by CHOP data scientists, including some R materials that are based on this workshop.  There are also some additional R materials that go beyond what we were able to talk about today.  Plus, you can learn some SQL, Python, Git, command line, machine learning, statistics, and other info while you're there!  These were created with researchers in mind, but even if you don't conduct research, you might find them useful.
+:::
+
+## More Data Literacy at CHOP!
+
+In the Research Institute, Arcus Data Education has a number of resources -- check out <https://education.arcus.chop.edu>.  Are you in the Clinical/Operational space?  Data and Analytics has a Data Literacy team, and they run [a program they call "DnA University"](https://at.chop.edu/communities/datagovernancecmte/quick-links/data-literacy/dna-university-application)!
+
+::: notes
+
+In the Research Institute, Arcus Data Education has a number of resources -- check out <https://education.arcus.chop.edu>.  Are you in the Clinical/Operational space?  Data and Analytics has a Data Literacy team, and they run a program they call "DnA University".  Both of these teams want to elevate your skills in a number of different tools, so check them out!
 :::
 
 ------------------------------------------------------------------------
 
 ::: {.columns .v-center-container}
-::: {.column .tiny-text width="33%"}
+::: {.column .tiny-text width="50%"}
 ![](media/r4ds.png){.half}
 
-<https://r4ds.had.co.nz>
+New edition! <https://r4ds.hadley.nz/>
+The original: <https://r4ds.had.co.nz>
 :::
 
-::: {.column .tiny-text width="33%"}
+::: {.column .tiny-text width="50%"}
 ![](media/r4ds_solutions.png){.half}
 
 <https://jrnold.github.io/r4ds-exercise-solutions/>
+(based on the original edition)
 :::
 
-::: {.column .tiny-text width="33%"}
-![](media/r4ds_hex.png){.two-thirds}
-
-<https://rfordatasci.org>
-:::
 :::
 
 ::: notes
 I wanted to point out that "R For Data Science" by Garrett Grolemund and Hadley Wickham is the de-facto standard introduction to data science with R.
 
-This course is designed so that you can pick up this book and keep learning - we use the same packages and conventions as in that book. The entire text is available for free at this address. Each chapter has a lot of exercises,
+This course is designed so that you can pick up this book and keep learning - we use the same packages and conventions as in that book. The entire text is available for free at this address. Each chapter has a lot of exercises.  There's a second edition out now that we recommend, but we still think the first edition solutions manual is useful.
 
-And there's a solutions manual for the exercises online, which makes this great for self-paced learning.
-
-There's also an amazing online community that was borne out of the book that has evolved into an incredibly vibrant and active slack community filled to the brim with resources and cheerful folks in all stages of their data science journey.
 :::
 
 ------
@@ -85,7 +131,7 @@ There's also an amazing online community that was borne out of the book that has
 <https://bookdown.org/yihui/rmarkdown/>
 
 ::: notes
-Our very own Rose Hartman is acknowledged in this great book, which will help you master the markdown used in Quarto and R Markdown.
+CHOP's very own Rose Hartman is acknowledged in this great book, which will help you master the markdown used in Quarto and R Markdown.
 :::
 
 ## Participate in Tidy Tuesday
@@ -93,14 +139,36 @@ Our very own Rose Hartman is acknowledged in this great book, which will help yo
 ![](media/tidy_tuesday.png){.two-thirds fig-align="center"}
 
 ::: notes
-The aforementioned R4DS community has an initiative known as "Tidy Tuesday" -- each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter.
+The R for Data Science community has an initiative known as "Tidy Tuesday" -- each week a new dataset is released, with a goal of allowing you to practice your data transformation and visualization skills. Lots of people who participate share their code and visualizations widely and openly, so you can get a great sense for what is possible in R just by browsing the hashtag on twitter, or X, or whatever we're calling the Elon Musk social experiment these days.
 
 If you do end up participating, we'd love to hear about it in the CHOPR slack!
+:::
+
+## Please fill out our Exit Survey!
+
+We want to understand how this workshop impacts you... your response to our survey is very important!
+
+::: notes
+We'll be emailing you in the next couple of days with a request to fill out our exit survey, and we humbly ask for your participation.  No one loves filling out surveys, but this would be a great way to concretely pay it forward and help us improve this workshop.
+
+:::
+
+## Announcements
+
+Any announcements that we forgot to include in the slides?
+
+::: notes
+Before I go to the last slide, does anyone have any announcements about CHOP R education, user group activities, or data science topics they want to share?
 :::
 
 ## Thank You! {.smaller}
 
 Thanks to all our helpers and to all of you!
 
-Again, all the materials you need are at <https://github.com/arcus/intro-to-r-for-clinical-data>, including a link to these slides and the files we used to make the slides in Quarto!
+Again, all the materials you need are at <https://github.com/arcus/intro-to-r-for-clinical-data>, including a link to these slides, instructions on downloading the materials, and the files we used to make the slides in Quarto!
 
+::: notes
+Finally, thanks to all our helpers and to all of you!
+
+Again, all the materials you need are at <https://github.com/arcus/intro-to-r-for-clinical-data>, including a link to these slides, instructions on downloading the materials, and the files we used to make the slides in Quarto!
+:::

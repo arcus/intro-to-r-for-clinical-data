@@ -21,7 +21,8 @@ library(countdown)
 ## Tech Check {.smaller}
 
 -   We suggest using the Chrome web browser.
--   **Important!!** If you haven't already, please sign up for a **free** account at <https://posit.cloud>. We will use this as our platform today. 
+-   **VERY Important!!** If you haven't already, please sign up for a **free** account at <https://posit.cloud>. We will use this as our platform today. 
+-  **Important!** If you haven't, please fill out the pre-course survey at <https://redcap.link/pre_r_for_clinical_data>. 
 -   (optional) These **slides** are at <https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/>
 -   (optional) The GitHub repo with **exercises and solutions** for this course as well as the slide deck source files in quarto is at <https://github.com/arcus/intro-to-r-for-clinical-data>
 
@@ -105,7 +106,7 @@ Our TA's will be helping learners out one on one, so if you're struggling, pleas
 Keith Baxelbaum, Teaching Assistant
 :::
 ::: {.column width="33%"}
-![](media/dino_3.jpg)
+![](media/melissa.jpg)
 Melissa Rosahl, Teaching Assistant
 :::
 ::: {.column width="33%"}
