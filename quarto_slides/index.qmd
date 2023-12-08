@@ -21,4 +21,6 @@ Slide decks (click on any title):
 * [Part 2: Visualize](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/visualize) 10:30-11:30
 * 45 min lunch break
 * [Part 3: Transform](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/transform) 12:15-1:15
-* [Part 4: Final Notes](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/dashboards) 1:15-1:30
+* [Part 4: Final Notes](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/final) 1:15-1:30
+
+* [Stuff we won't get to today: Dashboards](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/dashboards)
