@@ -29,6 +29,11 @@ Alright, now let's go into transforming data!
 
 ![](media/tidy_transform_phase.png){.two-thirds fig-align="center"}
 
+
+::: notes
+In this section, we'll build skills that deal with tidying and transforming data by reshaping data to meet your needs.
+:::
+
 ------------------------------------------------------------------------
 
 ::: {.columns .v-center-container}
@@ -253,7 +258,7 @@ For this, I just want you to think about how to write this, you don't have to te
 ![](media/covid_filter_example.png)
 
 ::: notes
-Great, so was on the right track, and a few others I see also posted the right answer. Yep, the answer is filter, open parenthesis, covid_testing bang equal stark, in quotes, close parenthesis.
+Great, so [name] was on the right track, and a few others I see also posted the right answer. Yep, the answer is filter, open parenthesis, covid_testing bang equal stark, in quotes, close parenthesis.
 
 The logical operator for NOT equals is exclamation point equals. When we go through the covid_testing data frame row by row, we see this expression will be false for the first two rows where the last_name is "stark" and true for the last two rows where the last_name isn't "stark". The second point is that when you're doing a comparison with a literal character string, such as "stark", that needs to go into quotes.
 :::
@@ -284,11 +289,17 @@ A is wrong because "positive" is a character string (it's not a number or a logi
 
 ## The Pipe Operator %\>% {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
 
+::: notes
+
+Let's talk about the pipe operator, which we can use to build pipelines!
+
+:::
+
 ## The Pipe Operator %\>%
 
 The pipe operator we'll use is `%>%`
 
-(You'll start to sometimes see `|>`, in R 4.1.0 forward)
+(You can also use `|>`, in R 4.1.0 forward)
 
 ::: notes
 One of the most powerful concepts in the `tidyverse` suite of packages is the pipe operator, which is written in two possible ways:
@@ -476,9 +487,26 @@ Then I'll use mutate without a pipe and make a new column composed of the sum of
 And finally, I'll take the data frame name out of that mutate and use it as the start of a pipeline. So I have covid_testing, then, mutate, total_tat equals col_rec_tat plus rec_ver_tat.
 :::
 
-## Additional Practice
+## Group By and Summarize
 
-Depending on how we're doing for time, there's a "bonus section" here that we may have time to do!  If time permits:
+A very common use case is to divide your data into groups, and get information about each group.
+
+For this, we'll use `group_by` and `summarize`.
+
+
+::: notes
+Group by combined with summarize is a way for us to lump cases together and then get a statistic for each group.  For example, maybe you want the median blood sugar for girls and the median blood sugar for boys in your study, or the maximum wait time for King of Prussia emergency department patients and the maximum wait time for University City emergency department patients.
+
+When you use group by, you have to tell R how to separate your cases into groups.  Any variable that is categorical data can be used to group.  For example, you can group by sex, or race, or zip code.
+
+Once you have your data in groups, you can then use the summarize command to get summary statistics for each group.  
+
+Summarizing can take lots of different forms!  Sometimes you want to know how big the group is, how many members it has.  Sometimes you want to know what the average value of something is per group, or what the maximum value is.  You can also summarize and give several different measures for each group, like maximum, minimum, mean, and median.
+:::
+
+## Additional Practice (Time Permitting)
+
+If time permits:
 
 Open `03 – Transform.qmd` and work through the exercises for the section that says "Your Turn #6.  We'll do this together!
 
@@ -508,11 +536,9 @@ We're also given a hint in the exercise file.  It tells us, "The function to cal
 
 Let's start by adding our starting data frame.  What's the name of our starting data frame again?  The one with all the data in it?  That's right, covid\_testing.  I'm adding that to the first line of this chunk.
 
-And we want to do something here called group\_by.  Group by is a way for us to lump cases together and then get a statistic for each group.  For example, maybe you want the median blood sugar for girls and the median blood sugar for boys in your study, or the maximum wait time for King of Prussia emergency department patients and the maximum wait time for University City emergency department patients.
+And we want to use group\_by.
 
-When you use group by, you need to tell R what you're grouping by.  Here, we want to get a statistic for each clinic, so we'll add `group_by(clinic_name)` in the second part of this pipeline.
-
-Once you have your data segmented into groups, you want to summarize each group.  Summarizing can take lots of different forms!  Sometimes you want to know how big the group is, how many members it has.  Sometimes you want to know what the average value of something is per group, or what the maximum value is.
+When you use group by, you need to tell R what variable you're using to separate data into groups.  Here, we want to get a statistic for each clinic, so we'll add `group_by(clinic_name)` in the second part of this pipeline.  That will form one group for each clinic name.  
 
 What were we asked to do? Let's look at letter (a) again.  We were asked to find the number of orders ordered by each clinic/unit, creating a new summary variable `num_orders`.
 
@@ -612,7 +638,7 @@ Beyond dplyr, there are a number of other [`tidyverse`](https://www.tidyverse.or
 
 If you want to look at Dashboards, a section we have decided to cut for time, you can find that here: [Dashboards](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/dashboards).
 
-But we'll be moving on to [Final Notes](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/final_notes).
+But we'll be moving on to [Final Notes](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023/final).
 
 ::: notes
 
