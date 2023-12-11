@@ -763,11 +763,14 @@ RStudio's Data Import cheat sheet helps with importing data from file types simi
 :::
 
 ::: {.column width="70%"}
-In English: <https://r4ds.had.co.nz/>
+In English: 
 
-English unofficial solutions at <https://jrnold.github.io/r4ds-exercise-solutions/index.html>
+* 2nd edition: <https://r4ds.hadley.nz/>
+* 1st edition: <https://r4ds.had.co.nz>
 
-In Spanish: <https://es.r4ds.hadley.nz/>
+English unofficial solutions (1st ed) at <https://jrnold.github.io/r4ds-exercise-solutions/index.html>
+
+In Spanish (1st ed): <https://es.r4ds.hadley.nz/>
 :::
 :::
 

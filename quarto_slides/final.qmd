@@ -104,8 +104,8 @@ In the Research Institute, Arcus Data Education has a number of resources -- che
 ::: {.column .tiny-text width="50%"}
 ![](media/r4ds.png){.half}
 
-New edition! <https://r4ds.hadley.nz/>
-The original: <https://r4ds.had.co.nz>
+* New edition! <https://r4ds.hadley.nz/>
+* The original: <https://r4ds.had.co.nz>
 :::
 
 ::: {.column .tiny-text width="50%"}
