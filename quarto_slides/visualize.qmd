@@ -134,7 +134,7 @@ Even though this graph isn't publication-perfect (at least not yet), it's still 
 ::: notes
 We'll be using the `ggplot2` package for creating graphics. `ggplot2` is part of the tidyverse so it will get loaded when you load the tidyverse package.
 
-`ggplot2` (and its main function, plain old `ggplot` without the 2) provides a "**grammar of graphics**" for data visualization. The idea of having a "grammar" for something is actually pretty common in R. Essentially, there should be a consistent way to build any type of "thing" in R, in this case, any type of graph. This makes it easier to learn and also easier to for humans to read the code later and make sense of it. And that's super important because most people who use R are not programmers.
+`ggplot2` (and its main function, plain old `ggplot` without the 2) provides a "**grammar of graphics**" for data visualization. The idea of having a "grammar" for something is actually pretty common in R. Essentially, there should be a consistent way to build any type of "thing" in R, in this case, any type of graph. This makes it easier to learn and also easier for humans to read the code later and make sense of it. And that's super important because most people who use R are not programmers.
 
 The idea of the grammar of graphics is that you should be able to specify any type of graph by specifying the data that goes into it, the type of graph that you want to make, and a mapping that describes how the data should be represented as visual marks on that graph.
 
