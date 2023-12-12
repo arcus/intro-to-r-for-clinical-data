@@ -601,7 +601,7 @@ I'm going to go pretty quickly through this section, because my intention here i
 ::: notes
 To save a plot you've created in the console, you can go to the **Plots** pane on the bottom right of the RStudio window, click "Export", and select "Save as Image".
 
-To save a plot you've created by running some code inside an R Markdown file, you can **right-click** the plot and select "Save image as".
+To save a plot you've created by running some code inside a Quarto or R Markdown file, you can **right-click** the plot and select "Save image as".
 :::
 
 ## Position Adjustments
