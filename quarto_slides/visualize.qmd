@@ -590,7 +590,8 @@ A **tidy data frame**, in which each variable is in its own column, each observa
 ## What Else? {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
 
 ::: notes
-Let's spend the next few minutes on an important conceptual distinction about how you can define aesthetics in your plot.
+Let's talk a little bit about some other tools and packages that may be of interest to you as you think about how to present your data. 
+I'm going to go pretty quickly through this section, because my intention here is not to actually teach you to do these things, but rather to provide these slides a resource you could go back to as you start working on your own data visualizations in R. 
 :::
 
 ## Saving Plots
