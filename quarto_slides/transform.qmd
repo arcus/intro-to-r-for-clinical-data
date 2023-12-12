@@ -138,7 +138,7 @@ Which of the following will select the first_name column from the covid_testing 
 
 **E)** Both B and D
 
-Type your response in the chat!
+A poll will come up for you to put in your answer in Teams!
 
 ```{r}
 countdown(minutes=1)
