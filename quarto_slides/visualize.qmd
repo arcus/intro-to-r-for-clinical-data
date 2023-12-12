@@ -134,7 +134,7 @@ Even though this graph isn't publication-perfect (at least not yet), it's still 
 ::: notes
 We'll be using the `ggplot2` package for creating graphics. `ggplot2` is part of the tidyverse so it will get loaded when you load the tidyverse package.
 
-`ggplot2` (and its main function, plain old `ggplot` without the 2) provides a "**grammar of graphics**" for data visualization. The idea of having a "grammar" for something is actually pretty common in R. Essentially, there should be a consistent way to build any type of "thing" in R, in this case, any type of graph. This makes it easier to learn and also easier to for humans to read the code later and make sense of it. And that's super important because most people who use R are not programmers.
+`ggplot2` (and its main function, plain old `ggplot` without the 2) provides a "**grammar of graphics**" for data visualization. The idea of having a "grammar" for something is actually pretty common in R. Essentially, there should be a consistent way to build any type of "thing" in R, in this case, any type of graph. This makes it easier to learn and also easier for humans to read the code later and make sense of it. And that's super important because most people who use R are not programmers.
 
 The idea of the grammar of graphics is that you should be able to specify any type of graph by specifying the data that goes into it, the type of graph that you want to make, and a mapping that describes how the data should be represented as visual marks on that graph.
 
@@ -590,7 +590,8 @@ A **tidy data frame**, in which each variable is in its own column, each observa
 ## What Else? {.section-break background-image="media/cork-board.png" background-size="400px" background-repeat="repeat"}
 
 ::: notes
-Let's spend the next few minutes on an important conceptual distinction about how you can define aesthetics in your plot.
+Let's talk a little bit about some other tools and packages that may be of interest to you as you think about how to present your data. 
+I'm going to go pretty quickly through this section, because my intention here is not to actually teach you to do these things, but rather to provide these slides a resource you could go back to as you start working on your own data visualizations in R. 
 :::
 
 ## Saving Plots
@@ -600,7 +601,7 @@ Let's spend the next few minutes on an important conceptual distinction about ho
 ::: notes
 To save a plot you've created in the console, you can go to the **Plots** pane on the bottom right of the RStudio window, click "Export", and select "Save as Image".
 
-To save a plot you've created by running some code inside an R Markdown file, you can **right-click** the plot and select "Save image as".
+To save a plot you've created by running some code inside a Quarto or R Markdown file, you can **right-click** the plot and select "Save image as".
 :::
 
 ## Position Adjustments
