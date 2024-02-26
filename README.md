@@ -2,6 +2,8 @@
 
 This is the GitHub repository for the workshop called Introduction to R for Clinical Data, given at the Children's Hospital of Philadelphia (CHOP) by Arcus Education and the CHOP R User Group.  
 
+**Looking to learn this content?** Check out the section on [how to sign up for a workshop, and how to review material from previous workshops](#upcoming-and-previous-workshops).
+
 This repository contains the files you need to be able to complete the exercises in the workshop.  Exercises for you to complete are in the [exercises](exercises) folder, and working solutions files are found in [solutions](solutions).
 
 This workshop is aimed at people who have never used R or RStudio and is appropriate for brand new beginners.  In it, you'll learn the basics of R, RStudio / Posit, and Quarto / R Markdown.  You'll work with fabricated clinical data and learn to ingest, visualize, reshape, and communicate findings, all using the R language.  
@@ -64,6 +66,20 @@ install.packages(c(
 ## Slides
 
 [Slides](https://joy-payton-chop.quarto.pub/intro-to-r-for-clinical-data-2023) of the teaching presentation that accompany the workshop are available and you are welcome to follow along or refer back to them at a later date.  The source code for these slides is included in the directory [quarto_slides](quarto_slides) in this repository.
+
+## Upcoming and previous workshops
+
+This workshop was last offered in December 2023. 
+If you want to be notified when the next workshop gets scheduled [sign up for the CHOP R User Group](http://bit.ly/chopRusers).
+
+You can watch a recording of the [August 2023 session of this workshop](https://www.youtube.com/watch?v=gU4HRzlZ7po).
+
+Much of the material from this workshop has also been adapted into interactive online tutorials you can work through at your own pace. We recommend the following sequence to learn the same content that is generally covered in this workshop: 
+
+- [R Basics: Introduction](https://liascript.github.io/course/?https://raw.githubusercontent.com/arcus/education_modules/main/r_basics_introduction/r_basics_introduction.md)
+- [R Basics: Visualizing Data with ggplot2](https://liascript.github.io/course/?https://raw.githubusercontent.com/arcus/education_modules/main/r_basics_visualize_data/r_basics_visualize_data.md)
+- [R Basics: Transforming Data with dplyr](https://liascript.github.io/course/?https://raw.githubusercontent.com/arcus/education_modules/main/r_basics_transform_data/r_basics_transform_data.md)
+- [R Basics: Practice](https://liascript.github.io/course/?https://raw.githubusercontent.com/arcus/education_modules/main/r_basics_practice/r_basics_practice.md)
 
 ## License
 
